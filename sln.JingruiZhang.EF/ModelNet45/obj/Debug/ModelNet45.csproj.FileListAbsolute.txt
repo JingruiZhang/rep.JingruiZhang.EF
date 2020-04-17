@@ -4,3 +4,15 @@ C:\codes_self\rep.JingruiZhang.EF\sln.JingruiZhang.EF\ModelNet45\obj\Debug\Model
 C:\codes_self\rep.JingruiZhang.EF\sln.JingruiZhang.EF\ModelNet45\obj\Debug\ModelNet45.csproj.CoreCompileInputs.cache
 C:\codes_self\rep.JingruiZhang.EF\sln.JingruiZhang.EF\ModelNet45\obj\Debug\ModelNet45.dll
 C:\codes_self\rep.JingruiZhang.EF\sln.JingruiZhang.EF\ModelNet45\obj\Debug\ModelNet45.pdb
+C:\codes_self\rep.JingruiZhang.EF\sln.JingruiZhang.EF\ModelNet45\bin\Debug\ModelNet45.dll.config
+C:\codes_self\rep.JingruiZhang.EF\sln.JingruiZhang.EF\ModelNet45\bin\Debug\EntityFramework.dll
+C:\codes_self\rep.JingruiZhang.EF\sln.JingruiZhang.EF\ModelNet45\bin\Debug\EntityFramework.SqlServer.dll
+C:\codes_self\rep.JingruiZhang.EF\sln.JingruiZhang.EF\ModelNet45\bin\Debug\EntityFramework.xml
+C:\codes_self\rep.JingruiZhang.EF\sln.JingruiZhang.EF\ModelNet45\bin\Debug\EntityFramework.SqlServer.xml
+C:\codes_self\rep.JingruiZhang.EF\sln.JingruiZhang.EF\ModelNet45\bin\Debug\zh-Hans\EntityFramework.resources.dll
+C:\codes_self\rep.JingruiZhang.EF\sln.JingruiZhang.EF\ModelNet45\bin\Debug\zh-Hans\EntityFramework.SqlServer.resources.dll
+C:\codes_self\rep.JingruiZhang.EF\sln.JingruiZhang.EF\ModelNet45\obj\Debug\ModelNet45.csproj.CopyComplete
+C:\codes_self\rep.JingruiZhang.EF\sln.JingruiZhang.EF\ModelNet45\bin\Debug\MySql.Data.dll
+C:\codes_self\rep.JingruiZhang.EF\sln.JingruiZhang.EF\ModelNet45\bin\Debug\MySql.Data.Entity.EF6.dll
+C:\codes_self\rep.JingruiZhang.EF\sln.JingruiZhang.EF\ModelNet45\bin\Debug\MySql.Data.xml
+C:\codes_self\rep.JingruiZhang.EF\sln.JingruiZhang.EF\ModelNet45\bin\Debug\MySql.Data.Entity.EF6.xml

@@ -1,0 +1,3036 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="probimModel.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.6" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="account">
+    <Key>
+      <PropertyRef Name="AccountId" />
+    </Key>
+    <Property Name="AccountId" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="MobileCode" Type="varchar" MaxLength="11" />
+    <Property Name="SecurityCode" Type="varchar" MaxLength="6" />
+    <Property Name="Password" Type="varchar" MaxLength="50" />
+    <Property Name="CompanyName" Type="varchar" MaxLength="50" />
+    <Property Name="FullName" Type="varchar" MaxLength="50" />
+    <Property Name="RegisterTime" Type="datetime" Precision="0" />
+    <Property Name="ExpireTime" Type="datetime" Precision="0" />
+    <Property Name="IPAddress" Type="varchar" MaxLength="50" />
+    <Property Name="IPAddressName" Type="varchar" MaxLength="200" />
+    <Property Name="DeleteMark" Type="int" />
+    <Property Name="EnabledMark" Type="int" />
+    <Property Name="Description" Type="varchar" MaxLength="200" />
+    <Property Name="CreateDate" Type="datetime" Precision="0" />
+    <Property Name="LastVisit" Type="datetime" Precision="0" />
+    <Property Name="LogOnCount" Type="int" />
+    <Property Name="AmountCount" Type="int" />
+    <Property Name="IsResetPwd" Type="bool" />
+  </EntityType>
+  <EntityType Name="api_drawposinfo">
+    <Key>
+      <PropertyRef Name="GID" />
+    </Key>
+    <Property Name="GID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="FileId" Type="varchar" MaxLength="50" />
+    <Property Name="PosX" Type="int" />
+    <Property Name="PosY" Type="int" />
+    <Property Name="OpId" Type="varchar" MaxLength="50" />
+    <Property Name="OpUser" Type="varchar" MaxLength="50" />
+    <Property Name="CreateDate" Type="datetime" Precision="0" />
+    <Property Name="ExamineId" Type="varchar" MaxLength="50" />
+    <Property Name="X" Type="varchar" MaxLength="50" />
+    <Property Name="Y" Type="varchar" MaxLength="50" />
+    <Property Name="Z" Type="varchar" MaxLength="50" />
+    <Property Name="Pixel2MX" Type="varchar" MaxLength="50" />
+    <Property Name="Pixel2MY" Type="varchar" MaxLength="50" />
+    <Property Name="Width" Type="varchar" MaxLength="50" />
+    <Property Name="Height" Type="varchar" MaxLength="50" />
+    <Property Name="IsDel" Type="int" />
+  </EntityType>
+  <EntityType Name="api_examineattachment">
+    <Key>
+      <PropertyRef Name="ExamineAttachmentID" />
+    </Key>
+    <Property Name="ExamineAttachmentID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ExamineID" Type="varchar" MaxLength="50" />
+    <Property Name="AttachmentType" Type="varchar" MaxLength="50" />
+    <Property Name="AttachmentName" Type="varchar" MaxLength="50" />
+    <Property Name="AttachmentUrl" Type="longtext" />
+    <Property Name="UploadDate" Type="datetime" Precision="0" />
+    <Property Name="CheckFlag" Type="int" />
+    <Property Name="IsDel" Type="int" />
+  </EntityType>
+  <EntityType Name="api_examinedata">
+    <Key>
+      <PropertyRef Name="ExamineID" />
+    </Key>
+    <Property Name="ExamineID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ProjectID" Type="varchar" MaxLength="50" />
+    <Property Name="ModelID" Type="varchar" MaxLength="50" />
+    <Property Name="ViewID" Type="varchar" MaxLength="50" />
+    <Property Name="ViewpointID" Type="varchar" MaxLength="50" />
+    <Property Name="LinkType" Type="varchar" MaxLength="50" />
+    <Property Name="LinkID" Type="varchar" MaxLength="50" />
+    <Property Name="Principal" Type="varchar" MaxLength="1024" />
+    <Property Name="PrincipalID" Type="varchar" MaxLength="1024" />
+    <Property Name="RelationMember" Type="varchar" MaxLength="1024" />
+    <Property Name="RelationMemberID" Type="varchar" MaxLength="1024" />
+    <Property Name="Examiner" Type="varchar" MaxLength="1024" />
+    <Property Name="ExaminerID" Type="varchar" MaxLength="1024" />
+    <Property Name="ExamineDate" Type="datetime" Precision="0" />
+    <Property Name="ExamineRemark" Type="varchar" MaxLength="1024" />
+    <Property Name="ExamineResult" Type="varchar" MaxLength="50" />
+    <Property Name="RectificateDate" Type="datetime" Precision="0" />
+    <Property Name="FloorID" Type="varchar" MaxLength="50" />
+    <Property Name="FloorName" Type="varchar" MaxLength="50" />
+    <Property Name="FlowPhaseID" Type="varchar" MaxLength="100" />
+    <Property Name="FlowPhase" Type="varchar" MaxLength="50" />
+    <Property Name="Professional" Type="varchar" MaxLength="50" />
+    <Property Name="Category" Type="varchar" MaxLength="50" />
+    <Property Name="Placement" Type="varchar" MaxLength="50" />
+    <Property Name="FirstCheckerID" Type="varchar" MaxLength="1024" />
+    <Property Name="FirstCheckerName" Type="varchar" MaxLength="1024" />
+    <Property Name="FirstCheckDate" Type="datetime" Precision="0" />
+    <Property Name="FirstCheckRemark" Type="varchar" MaxLength="2048" />
+    <Property Name="FirstCheckResult" Type="varchar" MaxLength="50" />
+    <Property Name="SecondCheckerID" Type="varchar" MaxLength="1024" />
+    <Property Name="SecondCheckerName" Type="varchar" MaxLength="1024" />
+    <Property Name="SecondCheckDate" Type="datetime" Precision="0" />
+    <Property Name="SecondCheckRemark" Type="varchar" MaxLength="2048" />
+    <Property Name="SecondCheckResult" Type="varchar" MaxLength="1024" />
+    <Property Name="ConstructUnit" Type="varchar" MaxLength="100" />
+    <Property Name="ConstructUnitID" Type="varchar" MaxLength="1100" />
+    <Property Name="SubConstructUnit" Type="varchar" MaxLength="100" />
+    <Property Name="SubConstructUnitID" Type="varchar" MaxLength="100" />
+    <Property Name="Subdivisional" Type="varchar" MaxLength="100" />
+    <Property Name="SubdivisionalID" Type="varchar" MaxLength="100" />
+    <Property Name="VerifyBatch" Type="varchar" MaxLength="100" />
+    <Property Name="VerifyBatchID" Type="varchar" MaxLength="100" />
+    <Property Name="Axis" Type="varchar" MaxLength="100" />
+    <Property Name="AxisID" Type="varchar" MaxLength="100" />
+    <Property Name="ConstructionTeam" Type="varchar" MaxLength="100" />
+    <Property Name="ConstructionTeamID" Type="varchar" MaxLength="100" />
+    <Property Name="IsDel" Type="int" />
+    <Property Name="ProfessionalID" Type="varchar" MaxLength="100" />
+    <Property Name="CategoryID" Type="varchar" MaxLength="100" />
+    <Property Name="CreateDate" Type="datetime" Precision="0" />
+    <Property Name="Title" Type="longtext" />
+  </EntityType>
+  <EntityType Name="api_examinedataextend">
+    <Key>
+      <PropertyRef Name="aede_guid" />
+    </Key>
+    <Property Name="aede_guid" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="aede_examineID" Type="varchar" MaxLength="50" />
+    <Property Name="aede_severitylevel" Type="varchar" MaxLength="50" />
+    <Property Name="aede_examinetype" Type="varchar" MaxLength="50" />
+    <Property Name="aede_checkeruserids" Type="longtext" />
+  </EntityType>
+  <EntityType Name="api_examinedatatype">
+    <Key>
+      <PropertyRef Name="aedt_guid" />
+    </Key>
+    <Property Name="aedt_guid" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="aedt_type" Type="varchar" MaxLength="50" />
+    <Property Name="aedt_name" Type="varchar" MaxLength="50" />
+    <Property Name="aedt_organizeId" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <!--生成过程中发现错误:
+警告 6002: 表/视图“def.probim.api_examinerectification”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+  <EntityType Name="api_examinerectification">
+    <Key>
+      <PropertyRef Name="RectificationID" />
+      <PropertyRef Name="ExamineID" />
+    </Key>
+    <Property Name="RectificationID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="RectificationOperatorID" Type="varchar" MaxLength="50" />
+    <Property Name="RectificationOperator" Type="varchar" MaxLength="50" />
+    <Property Name="RectificationOperateFlag" Type="int" />
+    <Property Name="RectificationCheckDate" Type="datetime" Precision="0" />
+    <Property Name="RectificationCheckResult" Type="varchar" MaxLength="50" />
+    <Property Name="RectificationRemark" Type="varchar" MaxLength="2048" />
+    <Property Name="IsDel" Type="bit" />
+    <Property Name="ExamineID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CreateDate" Type="datetime" Precision="0" />
+  </EntityType>
+  <EntityType Name="api2_invite">
+    <Key>
+      <PropertyRef Name="inv_guid" />
+    </Key>
+    <Property Name="inv_guid" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="inv_email" Type="varchar" MaxLength="50" />
+    <Property Name="inv_invitecode" Type="varchar" MaxLength="50" />
+    <Property Name="inv_createdate" Type="datetime" Precision="0" />
+    <Property Name="inv_deadlinedate" Type="datetime" Precision="0" />
+    <Property Name="inv_roleId" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="api2_recycles">
+    <Key>
+      <PropertyRef Name="arcc_guid" />
+    </Key>
+    <Property Name="arcc_guid" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="arcc_objectId" Type="varchar" MaxLength="50" />
+    <Property Name="arcc_organizeId" Type="varchar" MaxLength="50" />
+    <Property Name="arcc_type" Type="varchar" MaxLength="50" />
+    <Property Name="arcc_ifdirname" Type="varchar" MaxLength="50" />
+    <Property Name="arcc_modifytime" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="api2_session">
+    <Key>
+      <PropertyRef Name="apisession_id" />
+    </Key>
+    <Property Name="apisession_id" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="apisession_token" Type="text" />
+    <Property Name="apisession_currenttime" Type="datetime" Precision="0" />
+    <Property Name="apisession_companyid" Type="varchar" MaxLength="50" />
+    <Property Name="apisession_userid" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="api2_suscribe">
+    <Key>
+      <PropertyRef Name="asus_guid" />
+    </Key>
+    <Property Name="asus_guid" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="asus_userId" Type="varchar" MaxLength="50" />
+    <Property Name="asus_objectId" Type="varchar" MaxLength="50" />
+    <Property Name="asus_type" Type="varchar" MaxLength="50" />
+    <Property Name="asus_organizeId" Type="varchar" MaxLength="50" />
+    <Property Name="asus_ifdirname" Type="varchar" MaxLength="50" />
+    <Property Name="asus_ifdirupdtime" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="api2_validcode">
+    <Key>
+      <PropertyRef Name="avc_guid" />
+    </Key>
+    <Property Name="avc_guid" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="avc_sessionId" Type="varchar" MaxLength="50" />
+    <Property Name="avc_code" Type="varchar" MaxLength="50" />
+    <Property Name="avc_hadvalided" Type="int" />
+  </EntityType>
+  <EntityType Name="auth_rolephase">
+    <Key>
+      <PropertyRef Name="arp_Guid" />
+    </Key>
+    <Property Name="arp_Guid" Type="char" MaxLength="50" Nullable="false" />
+    <Property Name="arp_ProjectID" Type="char" MaxLength="50" />
+    <Property Name="arp_BIMComposerID" Type="char" MaxLength="50" />
+    <Property Name="arp_Phase" Type="char" MaxLength="50" />
+    <Property Name="arp_Enable" Type="char" MaxLength="50" />
+    <Property Name="arp_RoleId" Type="char" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="base_area">
+    <Key>
+      <PropertyRef Name="AreaId" />
+    </Key>
+    <Property Name="AreaId" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ParentId" Type="varchar" MaxLength="50" />
+    <Property Name="AreaCode" Type="varchar" MaxLength="50" />
+    <Property Name="AreaName" Type="varchar" MaxLength="50" />
+    <Property Name="QuickQuery" Type="varchar" MaxLength="200" />
+    <Property Name="SimpleSpelling" Type="varchar" MaxLength="200" />
+    <Property Name="Layer" Type="int" />
+    <Property Name="SortCode" Type="int" />
+    <Property Name="DeleteMark" Type="int" />
+    <Property Name="EnabledMark" Type="int" />
+    <Property Name="Description" Type="varchar" MaxLength="200" />
+    <Property Name="CreateDate" Type="datetime" Precision="0" />
+    <Property Name="CreateUserId" Type="varchar" MaxLength="50" />
+    <Property Name="CreateUserName" Type="varchar" MaxLength="50" />
+    <Property Name="ModifyDate" Type="datetime" Precision="0" />
+    <Property Name="ModifyUserId" Type="varchar" MaxLength="50" />
+    <Property Name="ModifyUserName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="base_authorize">
+    <Key>
+      <PropertyRef Name="AuthorizeId" />
+    </Key>
+    <Property Name="AuthorizeId" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Category" Type="int" />
+    <Property Name="ObjectId" Type="varchar" MaxLength="50" />
+    <Property Name="ItemType" Type="int" />
+    <Property Name="ItemId" Type="varchar" MaxLength="50" />
+    <Property Name="SortCode" Type="int" />
+    <Property Name="CreateDate" Type="datetime" Precision="0" />
+    <Property Name="CreateUserId" Type="varchar" MaxLength="50" />
+    <Property Name="CreateUserName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="base_authorizedata">
+    <Key>
+      <PropertyRef Name="AuthorizeDataId" />
+    </Key>
+    <Property Name="AuthorizeDataId" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="AuthorizeType" Type="int" />
+    <Property Name="Category" Type="int" />
+    <Property Name="ObjectId" Type="varchar" MaxLength="50" />
+    <Property Name="ItemId" Type="varchar" MaxLength="50" />
+    <Property Name="ItemName" Type="varchar" MaxLength="50" />
+    <Property Name="ResourceId" Type="varchar" MaxLength="50" />
+    <Property Name="IsRead" Type="int" />
+    <Property Name="AuthorizeConstraint" Type="varchar" MaxLength="200" />
+    <Property Name="SortCode" Type="int" />
+    <Property Name="CreateDate" Type="datetime" Precision="0" />
+    <Property Name="CreateUserId" Type="varchar" MaxLength="50" />
+    <Property Name="CreateUserName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="base_category">
+    <Key>
+      <PropertyRef Name="bc_guid" />
+    </Key>
+    <Property Name="bc_guid" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="bc_categoryname" Type="varchar" MaxLength="50" />
+    <Property Name="bc_categorytype" Type="varchar" MaxLength="50" />
+    <Property Name="bc_organizeId" Type="varchar" MaxLength="50" />
+    <Property Name="bc_createtime" Type="datetime" Precision="0" />
+    <Property Name="bc_extjson" Type="longtext" />
+  </EntityType>
+  <EntityType Name="base_coderule">
+    <Key>
+      <PropertyRef Name="RuleId" />
+    </Key>
+    <Property Name="RuleId" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ModuleId" Type="varchar" MaxLength="50" />
+    <Property Name="Module" Type="varchar" MaxLength="50" />
+    <Property Name="EnCode" Type="varchar" MaxLength="50" />
+    <Property Name="FullName" Type="varchar" MaxLength="50" />
+    <Property Name="Mode" Type="int" />
+    <Property Name="CurrentNumber" Type="varchar" MaxLength="50" />
+    <Property Name="RuleFormatJson" Type="longtext" />
+    <Property Name="SortCode" Type="int" />
+    <Property Name="DeleteMark" Type="int" />
+    <Property Name="EnabledMark" Type="int" />
+    <Property Name="Description" Type="varchar" MaxLength="200" />
+    <Property Name="CreateDate" Type="datetime" Precision="0" />
+    <Property Name="CreateUserId" Type="varchar" MaxLength="50" />
+    <Property Name="CreateUserName" Type="varchar" MaxLength="50" />
+    <Property Name="ModifyDate" Type="datetime" Precision="0" />
+    <Property Name="ModifyUserId" Type="varchar" MaxLength="50" />
+    <Property Name="ModifyUserName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="base_coderuleseed">
+    <Key>
+      <PropertyRef Name="RuleSeedId" />
+    </Key>
+    <Property Name="RuleSeedId" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="RuleId" Type="varchar" MaxLength="50" />
+    <Property Name="UserId" Type="varchar" MaxLength="50" />
+    <Property Name="SeedValue" Type="int" />
+    <Property Name="CreateDate" Type="datetime" Precision="0" />
+    <Property Name="CreateUserId" Type="varchar" MaxLength="50" />
+    <Property Name="CreateUserName" Type="varchar" MaxLength="50" />
+    <Property Name="ModifyDate" Type="datetime" Precision="0" />
+    <Property Name="ModifyUserId" Type="varchar" MaxLength="50" />
+    <Property Name="ModifyUserName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="base_companydata">
+    <Key>
+      <PropertyRef Name="CompanydataId" />
+    </Key>
+    <Property Name="CompanydataId" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="OrganizeId" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="JsonData" Type="varchar" MaxLength="20000" />
+    <Property Name="CreateDate" Type="varchar" MaxLength="30" />
+    <Property Name="ModifyDate" Type="varchar" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="base_databasebackup">
+    <Key>
+      <PropertyRef Name="DatabaseBackupId" />
+    </Key>
+    <Property Name="DatabaseBackupId" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="DatabaseLinkId" Type="varchar" MaxLength="50" />
+    <Property Name="ParentId" Type="varchar" MaxLength="50" />
+    <Property Name="EnCode" Type="varchar" MaxLength="50" />
+    <Property Name="FullName" Type="varchar" MaxLength="50" />
+    <Property Name="ExecuteMode" Type="int" />
+    <Property Name="ExecuteTime" Type="varchar" MaxLength="50" />
+    <Property Name="BackupPath" Type="varchar" MaxLength="200" />
+    <Property Name="SortCode" Type="int" />
+    <Property Name="DeleteMark" Type="int" />
+    <Property Name="EnabledMark" Type="int" />
+    <Property Name="Description" Type="varchar" MaxLength="200" />
+    <Property Name="CreateDate" Type="datetime" Precision="0" />
+    <Property Name="CreateUserId" Type="varchar" MaxLength="50" />
+    <Property Name="CreateUserName" Type="varchar" MaxLength="50" />
+    <Property Name="ModifyDate" Type="datetime" Precision="0" />
+    <Property Name="ModifyUserId" Type="varchar" MaxLength="50" />
+    <Property Name="ModifyUserName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="base_databaselink">
+    <Key>
+      <PropertyRef Name="DatabaseLinkId" />
+    </Key>
+    <Property Name="DatabaseLinkId" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ServerAddress" Type="varchar" MaxLength="50" />
+    <Property Name="DBName" Type="varchar" MaxLength="50" />
+    <Property Name="DBAlias" Type="varchar" MaxLength="50" />
+    <Property Name="DbType" Type="varchar" MaxLength="50" />
+    <Property Name="Version" Type="varchar" MaxLength="50" />
+    <Property Name="DbConnection" Type="varchar" MaxLength="200" />
+    <Property Name="DESEncrypt" Type="int" />
+    <Property Name="SortCode" Type="int" />
+    <Property Name="DeleteMark" Type="int" />
+    <Property Name="EnabledMark" Type="int" />
+    <Property Name="Description" Type="varchar" MaxLength="200" />
+    <Property Name="CreateDate" Type="datetime" Precision="0" />
+    <Property Name="CreateUserId" Type="varchar" MaxLength="50" />
+    <Property Name="CreateUserName" Type="varchar" MaxLength="50" />
+    <Property Name="ModifyDate" Type="datetime" Precision="0" />
+    <Property Name="ModifyUserId" Type="varchar" MaxLength="50" />
+    <Property Name="ModifyUserName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="base_dataitem">
+    <Key>
+      <PropertyRef Name="ItemId" />
+    </Key>
+    <Property Name="ItemId" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ParentId" Type="varchar" MaxLength="50" />
+    <Property Name="ItemCode" Type="varchar" MaxLength="50" />
+    <Property Name="ItemName" Type="varchar" MaxLength="50" />
+    <Property Name="IsTree" Type="int" />
+    <Property Name="IsNav" Type="int" />
+    <Property Name="SortCode" Type="int" />
+    <Property Name="DeleteMark" Type="int" />
+    <Property Name="EnabledMark" Type="int" />
+    <Property Name="Description" Type="varchar" MaxLength="200" />
+    <Property Name="CreateDate" Type="datetime" Precision="0" />
+    <Property Name="CreateUserId" Type="varchar" MaxLength="50" />
+    <Property Name="CreateUserName" Type="varchar" MaxLength="50" />
+    <Property Name="ModifyDate" Type="datetime" Precision="0" />
+    <Property Name="ModifyUserId" Type="varchar" MaxLength="50" />
+    <Property Name="ModifyUserName" Type="varchar" MaxLength="50" />
+    <Property Name="Category" Type="varchar" MaxLength="50" />
+    <Property Name="FlagId" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="base_dataitemdetail">
+    <Key>
+      <PropertyRef Name="ItemDetailId" />
+    </Key>
+    <Property Name="ItemDetailId" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ItemId" Type="varchar" MaxLength="50" />
+    <Property Name="ParentId" Type="varchar" MaxLength="50" />
+    <Property Name="ItemCode" Type="varchar" MaxLength="50" />
+    <Property Name="ItemName" Type="varchar" MaxLength="50" />
+    <Property Name="ItemValue" Type="varchar" MaxLength="50" />
+    <Property Name="QuickQuery" Type="varchar" MaxLength="200" />
+    <Property Name="SimpleSpelling" Type="varchar" MaxLength="200" />
+    <Property Name="IsDefault" Type="int" />
+    <Property Name="SortCode" Type="int" />
+    <Property Name="DeleteMark" Type="int" />
+    <Property Name="EnabledMark" Type="int" />
+    <Property Name="Description" Type="varchar" MaxLength="200" />
+    <Property Name="CreateDate" Type="datetime" Precision="0" />
+    <Property Name="CreateUserId" Type="varchar" MaxLength="50" />
+    <Property Name="CreateUserName" Type="varchar" MaxLength="50" />
+    <Property Name="ModifyDate" Type="datetime" Precision="0" />
+    <Property Name="ModifyUserId" Type="varchar" MaxLength="50" />
+    <Property Name="ModifyUserName" Type="varchar" MaxLength="50" />
+    <Property Name="FlagId" Type="varchar" MaxLength="50" />
+    <Property Name="Category" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="base_department">
+    <Key>
+      <PropertyRef Name="DepartmentId" />
+    </Key>
+    <Property Name="DepartmentId" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="OrganizeId" Type="varchar" MaxLength="50" />
+    <Property Name="ParentId" Type="varchar" MaxLength="50" />
+    <Property Name="EnCode" Type="varchar" MaxLength="50" />
+    <Property Name="FullName" Type="varchar" MaxLength="50" />
+    <Property Name="ShortName" Type="varchar" MaxLength="50" />
+    <Property Name="Nature" Type="varchar" MaxLength="50" />
+    <Property Name="ManagerId" Type="varchar" MaxLength="50" />
+    <Property Name="Manager" Type="varchar" MaxLength="50" />
+    <Property Name="OuterPhone" Type="varchar" MaxLength="50" />
+    <Property Name="InnerPhone" Type="varchar" MaxLength="50" />
+    <Property Name="Email" Type="varchar" MaxLength="50" />
+    <Property Name="Fax" Type="varchar" MaxLength="50" />
+    <Property Name="Layer" Type="int" />
+    <Property Name="SortCode" Type="int" />
+    <Property Name="DeleteMark" Type="int" />
+    <Property Name="EnabledMark" Type="int" />
+    <Property Name="Description" Type="varchar" MaxLength="200" />
+    <Property Name="CreateDate" Type="datetime" Precision="0" />
+    <Property Name="CreateUserId" Type="varchar" MaxLength="50" />
+    <Property Name="CreateUserName" Type="varchar" MaxLength="50" />
+    <Property Name="ModifyDate" Type="datetime" Precision="0" />
+    <Property Name="ModifyUserId" Type="varchar" MaxLength="50" />
+    <Property Name="ModifyUserName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="base_file">
+    <Key>
+      <PropertyRef Name="bf_guid" />
+    </Key>
+    <Property Name="bf_guid" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="bf_md5" Type="varchar" MaxLength="50" />
+    <Property Name="bf_path" Type="varchar" MaxLength="255" />
+    <Property Name="bf_filename" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="base_filefolder">
+    <Key>
+      <PropertyRef Name="FolderId" />
+    </Key>
+    <Property Name="FolderId" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ParentId" Type="varchar" MaxLength="50" />
+    <Property Name="FolderType" Type="varchar" MaxLength="50" />
+    <Property Name="FolderName" Type="varchar" MaxLength="200" />
+    <Property Name="IsShare" Type="int" />
+    <Property Name="ShareLink" Type="varchar" MaxLength="200" />
+    <Property Name="ShareCode" Type="int" />
+    <Property Name="ShareTime" Type="datetime" Precision="0" />
+    <Property Name="SortCode" Type="int" />
+    <Property Name="DeleteMark" Type="int" />
+    <Property Name="EnabledMark" Type="int" />
+    <Property Name="Description" Type="varchar" MaxLength="200" />
+    <Property Name="CreateDate" Type="datetime" Precision="0" />
+    <Property Name="CreateUserId" Type="varchar" MaxLength="50" />
+    <Property Name="CreateUserName" Type="varchar" MaxLength="50" />
+    <Property Name="ModifyDate" Type="datetime" Precision="0" />
+    <Property Name="ModifyUserId" Type="varchar" MaxLength="50" />
+    <Property Name="ModifyUserName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="base_fileinfo">
+    <Key>
+      <PropertyRef Name="FileId" />
+    </Key>
+    <Property Name="FileId" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="FolderId" Type="varchar" MaxLength="50" />
+    <Property Name="FileName" Type="varchar" MaxLength="200" />
+    <Property Name="FilePath" Type="varchar" MaxLength="200" />
+    <Property Name="FileSize" Type="varchar" MaxLength="50" />
+    <Property Name="FileExtensions" Type="varchar" MaxLength="50" />
+    <Property Name="FileType" Type="varchar" MaxLength="50" />
+    <Property Name="IsShare" Type="int" />
+    <Property Name="ShareLink" Type="varchar" MaxLength="200" />
+    <Property Name="ShareCode" Type="int" />
+    <Property Name="ShareTime" Type="datetime" Precision="0" />
+    <Property Name="DownloadCount" Type="int" />
+    <Property Name="IsTop" Type="int" />
+    <Property Name="SortCode" Type="int" />
+    <Property Name="DeleteMark" Type="int" />
+    <Property Name="EnabledMark" Type="int" />
+    <Property Name="Description" Type="varchar" MaxLength="200" />
+    <Property Name="CreateDate" Type="datetime" Precision="0" />
+    <Property Name="CreateUserId" Type="varchar" MaxLength="50" />
+    <Property Name="CreateUserName" Type="varchar" MaxLength="50" />
+    <Property Name="ModifyDate" Type="datetime" Precision="0" />
+    <Property Name="ModifyUserId" Type="varchar" MaxLength="50" />
+    <Property Name="ModifyUserName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="base_fileinfo_version">
+    <Key>
+      <PropertyRef Name="FileInfoVersionId" />
+    </Key>
+    <Property Name="FileInfoVersionId" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="FileId" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="FileVersion" Type="int" Nullable="false" />
+    <Property Name="FileSize" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CreateUserID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CreateUserName" Type="varchar" MaxLength="50" />
+    <Property Name="CreateDate" Type="datetime" Precision="0" Nullable="false" />
+  </EntityType>
+  <EntityType Name="base_filterip">
+    <Key>
+      <PropertyRef Name="FilterIPId" />
+    </Key>
+    <Property Name="FilterIPId" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ObjectType" Type="varchar" MaxLength="50" />
+    <Property Name="ObjectId" Type="varchar" MaxLength="50" />
+    <Property Name="VisitType" Type="int" />
+    <Property Name="Type" Type="int" />
+    <Property Name="IPLimit" Type="varchar" MaxLength="200" />
+    <Property Name="SortCode" Type="int" />
+    <Property Name="DeleteMark" Type="int" />
+    <Property Name="EnabledMark" Type="int" />
+    <Property Name="Description" Type="varchar" MaxLength="200" />
+    <Property Name="CreateDate" Type="datetime" Precision="0" />
+    <Property Name="CreateUserId" Type="varchar" MaxLength="50" />
+    <Property Name="CreateUserName" Type="varchar" MaxLength="50" />
+    <Property Name="ModifyDate" Type="datetime" Precision="0" />
+    <Property Name="ModifyUserId" Type="varchar" MaxLength="50" />
+    <Property Name="ModifyUserName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="base_filtertime">
+    <Key>
+      <PropertyRef Name="FilterTimeId" />
+    </Key>
+    <Property Name="FilterTimeId" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ObjectType" Type="varchar" MaxLength="50" />
+    <Property Name="ObjectId" Type="varchar" MaxLength="50" />
+    <Property Name="VisitType" Type="int" />
+    <Property Name="WeekDay1" Type="varchar" MaxLength="200" />
+    <Property Name="WeekDay2" Type="varchar" MaxLength="200" />
+    <Property Name="WeekDay3" Type="varchar" MaxLength="200" />
+    <Property Name="WeekDay4" Type="varchar" MaxLength="200" />
+    <Property Name="WeekDay5" Type="varchar" MaxLength="200" />
+    <Property Name="WeekDay6" Type="varchar" MaxLength="200" />
+    <Property Name="WeekDay7" Type="varchar" MaxLength="200" />
+    <Property Name="SortCode" Type="int" />
+    <Property Name="DeleteMark" Type="int" />
+    <Property Name="EnabledMark" Type="int" />
+    <Property Name="Description" Type="varchar" MaxLength="200" />
+    <Property Name="CreateDate" Type="datetime" Precision="0" />
+    <Property Name="CreateUserId" Type="varchar" MaxLength="50" />
+    <Property Name="CreateUserName" Type="varchar" MaxLength="50" />
+    <Property Name="ModifyDate" Type="datetime" Precision="0" />
+    <Property Name="ModifyUserId" Type="varchar" MaxLength="50" />
+    <Property Name="ModifyUserName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="base_issue">
+    <Key>
+      <PropertyRef Name="IssueId" />
+    </Key>
+    <Property Name="IssueId" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ProjectID" Type="varchar" MaxLength="50" />
+    <Property Name="ModelId" Type="varchar" MaxLength="50" />
+    <Property Name="ViewpointID" Type="longtext" />
+    <Property Name="Title" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="ImageUrl" Type="longtext" />
+    <Property Name="Content" Type="varchar" MaxLength="5000" />
+    <Property Name="IssueStatus" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CreateDate" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="CreateUserId" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CreateUserName" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="EndDate" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="IsPublic" Type="bool" />
+    <Property Name="IssueTypeID" Type="varchar" MaxLength="50" />
+    <Property Name="DeleteMark" Type="int" />
+  </EntityType>
+  <EntityType Name="base_issue_talk">
+    <Key>
+      <PropertyRef Name="Issue_TalkId" />
+    </Key>
+    <Property Name="Issue_TalkId" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="IssueId" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="UserId" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Content" Type="varchar" MaxLength="5000" />
+    <Property Name="CreateDate" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="ContentType" Type="varchar" MaxLength="255" />
+    <Property Name="DeleteMark" Type="int" />
+    <Property Name="UserOfUnRead" Type="varchar" MaxLength="10000" />
+    <Property Name="Issue_PTalkId" Type="varchar" MaxLength="50" />
+    <Property Name="CommentPatchGUID" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="base_issue_user">
+    <Key>
+      <PropertyRef Name="Issue_User_Id" />
+    </Key>
+    <Property Name="Issue_User_Id" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="IssueId" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="UserId" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="IUType" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="IsRead" Type="int" />
+  </EntityType>
+  <EntityType Name="base_issuenewrelation">
+    <Key>
+      <PropertyRef Name="BINR_ID" />
+    </Key>
+    <Property Name="BINR_ID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="BINR_IssueID" Type="varchar" MaxLength="50" />
+    <Property Name="BINR_ViewPoint_ModelID" Type="varchar" MaxLength="50" />
+    <Property Name="BINR_ViewPointID" Type="varchar" MaxLength="50" />
+    <Property Name="BINR_Image2D_ModelID" Type="varchar" MaxLength="50" />
+    <Property Name="BINR_Image2DID" Type="varchar" MaxLength="50" />
+    <Property Name="BINR_Image2D_Position" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="base_log">
+    <Key>
+      <PropertyRef Name="LogId" />
+    </Key>
+    <Property Name="LogId" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CategoryId" Type="int" />
+    <Property Name="SourceObjectId" Type="varchar" MaxLength="50" />
+    <Property Name="SourceContentJson" Type="longtext" />
+    <Property Name="OperateTime" Type="datetime" Precision="0" />
+    <Property Name="OperateUserId" Type="varchar" MaxLength="50" />
+    <Property Name="OperateAccount" Type="varchar" MaxLength="50" />
+    <Property Name="OperateTypeId" Type="varchar" MaxLength="50" />
+    <Property Name="OperateType" Type="varchar" MaxLength="50" />
+    <Property Name="ModuleId" Type="varchar" MaxLength="50" />
+    <Property Name="Module" Type="varchar" MaxLength="200" />
+    <Property Name="IPAddress" Type="varchar" MaxLength="50" />
+    <Property Name="IPAddressName" Type="varchar" MaxLength="200" />
+    <Property Name="Host" Type="varchar" MaxLength="200" />
+    <Property Name="Browser" Type="varchar" MaxLength="50" />
+    <Property Name="ExecuteResult" Type="int" />
+    <Property Name="ExecuteResultJson" Type="longtext" />
+    <Property Name="Description" Type="varchar" MaxLength="200" />
+    <Property Name="DeleteMark" Type="int" />
+    <Property Name="EnabledMark" Type="int" />
+  </EntityType>
+  <EntityType Name="base_logext">
+    <Key>
+      <PropertyRef Name="ble_guid" />
+    </Key>
+    <Property Name="ble_guid" Type="guid" Nullable="false" />
+    <Property Name="bl_guid" Type="varchar" MaxLength="50" />
+    <Property Name="ble_organize1Id" Type="varchar" MaxLength="45" />
+    <Property Name="ble_organize2Id" Type="varchar" MaxLength="45" />
+    <Property Name="ble_roleId" Type="varchar" MaxLength="45" />
+    <Property Name="ble_userId" Type="varchar" MaxLength="45" />
+    <Property Name="ble_issueId" Type="varchar" MaxLength="45" />
+    <Property Name="ble_objecttype" Type="varchar" MaxLength="45" />
+    <Property Name="ble_actionname" Type="varchar" MaxLength="128" />
+  </EntityType>
+  <EntityType Name="base_material">
+    <Key>
+      <PropertyRef Name="bm_guid" />
+    </Key>
+    <Property Name="bm_guid" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="bm_materialname" Type="varchar" MaxLength="50" />
+    <Property Name="bm_materialcode" Type="varchar" MaxLength="50" />
+    <Property Name="bm_materialmodel" Type="varchar" MaxLength="50" />
+    <Property Name="bm_materialcount" Type="double" />
+    <Property Name="bm_materialunit" Type="varchar" MaxLength="50" />
+    <Property Name="bm_materialfac" Type="varchar" MaxLength="50" />
+    <Property Name="bm_planarrtime" Type="datetime" Precision="0" />
+    <Property Name="bc_guid_materialtype" Type="varchar" MaxLength="50" />
+    <Property Name="bc_guid_materialstatus" Type="varchar" MaxLength="50" />
+    <Property Name="bm_extjson" Type="longtext" />
+    <Property Name="bm_updatetime" Type="datetime" Precision="0" />
+  </EntityType>
+  <EntityType Name="base_materialelements">
+    <Key>
+      <PropertyRef Name="bme_guid" />
+    </Key>
+    <Property Name="bme_guid" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="bme_materialid" Type="varchar" MaxLength="50" />
+    <Property Name="bme_elementids" Type="longtext" />
+    <Property Name="bme_createtime" Type="datetime" Precision="0" />
+    <Property Name="bme_updatetime" Type="datetime" Precision="0" />
+  </EntityType>
+  <EntityType Name="base_materialrecord">
+    <Key>
+      <PropertyRef Name="bmr_guid" />
+    </Key>
+    <Property Name="bmr_guid" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="bmr_userId" Type="varchar" MaxLength="50" />
+    <Property Name="bmr_userName" Type="varchar" MaxLength="50" />
+    <Property Name="bmr_operDescription" Type="varchar" MaxLength="50" />
+    <Property Name="bmr_operItems" Type="longtext" />
+    <Property Name="bmr_operdate" Type="datetime" Precision="0" />
+    <Property Name="bm_guid" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="base_messagequeue">
+    <Key>
+      <PropertyRef Name="MessageQueueId" />
+    </Key>
+    <Property Name="MessageQueueId" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="MessageContent" Type="varchar" MaxLength="2048" />
+    <Property Name="ReceiverContact" Type="varchar" MaxLength="2048" />
+    <Property Name="CreateDate" Type="date" />
+    <Property Name="CreateUserId" Type="varchar" MaxLength="50" />
+    <Property Name="IsDel" Type="bit" />
+    <Property Name="IsPushed" Type="bit" />
+    <Property Name="Category" Type="int" />
+  </EntityType>
+  <EntityType Name="base_module">
+    <Key>
+      <PropertyRef Name="ModuleId" />
+    </Key>
+    <Property Name="ModuleId" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ParentId" Type="varchar" MaxLength="50" />
+    <Property Name="EnCode" Type="varchar" MaxLength="200" />
+    <Property Name="FullName" Type="varchar" MaxLength="200" />
+    <Property Name="Icon" Type="varchar" MaxLength="50" />
+    <Property Name="UrlAddress" Type="varchar" MaxLength="200" />
+    <Property Name="Target" Type="varchar" MaxLength="20" />
+    <Property Name="IsMenu" Type="int" />
+    <Property Name="AllowExpand" Type="int" />
+    <Property Name="IsPublic" Type="int" />
+    <Property Name="AllowEdit" Type="int" />
+    <Property Name="AllowDelete" Type="int" />
+    <Property Name="SortCode" Type="int" />
+    <Property Name="DeleteMark" Type="int" />
+    <Property Name="EnabledMark" Type="int" />
+    <Property Name="Description" Type="varchar" MaxLength="200" />
+    <Property Name="CreateDate" Type="datetime" Precision="0" />
+    <Property Name="CreateUserId" Type="varchar" MaxLength="50" />
+    <Property Name="CreateUserName" Type="varchar" MaxLength="50" />
+    <Property Name="ModifyDate" Type="datetime" Precision="0" />
+    <Property Name="ModifyUserId" Type="varchar" MaxLength="50" />
+    <Property Name="ModifyUserName" Type="varchar" MaxLength="50" />
+    <Property Name="Category" Type="int" />
+  </EntityType>
+  <!--生成过程中发现错误:
+警告 6002: 表/视图“def.probim.base_module_bak”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+  <EntityType Name="base_module_bak">
+    <Key>
+      <PropertyRef Name="ModuleId" />
+    </Key>
+    <Property Name="ModuleId" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ParentId" Type="varchar" MaxLength="50" />
+    <Property Name="EnCode" Type="varchar" MaxLength="200" />
+    <Property Name="FullName" Type="varchar" MaxLength="200" />
+    <Property Name="Icon" Type="varchar" MaxLength="50" />
+    <Property Name="UrlAddress" Type="varchar" MaxLength="200" />
+    <Property Name="Target" Type="varchar" MaxLength="20" />
+    <Property Name="IsMenu" Type="int" />
+    <Property Name="AllowExpand" Type="int" />
+    <Property Name="IsPublic" Type="int" />
+    <Property Name="AllowEdit" Type="int" />
+    <Property Name="AllowDelete" Type="int" />
+    <Property Name="SortCode" Type="int" />
+    <Property Name="DeleteMark" Type="int" />
+    <Property Name="EnabledMark" Type="int" />
+    <Property Name="Description" Type="varchar" MaxLength="200" />
+    <Property Name="CreateDate" Type="datetime" Precision="0" />
+    <Property Name="CreateUserId" Type="varchar" MaxLength="50" />
+    <Property Name="CreateUserName" Type="varchar" MaxLength="50" />
+    <Property Name="ModifyDate" Type="datetime" Precision="0" />
+    <Property Name="ModifyUserId" Type="varchar" MaxLength="50" />
+    <Property Name="ModifyUserName" Type="varchar" MaxLength="50" />
+    <Property Name="Category" Type="int" />
+  </EntityType>
+  <EntityType Name="base_modulebutton">
+    <Key>
+      <PropertyRef Name="ModuleButtonId" />
+    </Key>
+    <Property Name="ModuleButtonId" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ModuleId" Type="varchar" MaxLength="50" />
+    <Property Name="ParentId" Type="varchar" MaxLength="50" />
+    <Property Name="Icon" Type="varchar" MaxLength="50" />
+    <Property Name="EnCode" Type="varchar" MaxLength="50" />
+    <Property Name="FullName" Type="varchar" MaxLength="50" />
+    <Property Name="ActionAddress" Type="varchar" MaxLength="200" />
+    <Property Name="SortCode" Type="int" />
+  </EntityType>
+  <EntityType Name="base_modulecolumn">
+    <Key>
+      <PropertyRef Name="ModuleColumnId" />
+    </Key>
+    <Property Name="ModuleColumnId" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ModuleId" Type="varchar" MaxLength="50" />
+    <Property Name="ParentId" Type="varchar" MaxLength="50" />
+    <Property Name="EnCode" Type="varchar" MaxLength="50" />
+    <Property Name="FullName" Type="varchar" MaxLength="50" />
+    <Property Name="SortCode" Type="int" />
+    <Property Name="Description" Type="varchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="base_moduleform">
+    <Key>
+      <PropertyRef Name="FormId" />
+    </Key>
+    <Property Name="FormId" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ModuleId" Type="varchar" MaxLength="50" />
+    <Property Name="EnCode" Type="varchar" MaxLength="50" />
+    <Property Name="FullName" Type="varchar" MaxLength="50" />
+    <Property Name="FormJson" Type="varchar" MaxLength="2048" />
+    <Property Name="SortCode" Type="int" />
+    <Property Name="DeleteMark" Type="int" />
+    <Property Name="EnabledMark" Type="int" />
+    <Property Name="Description" Type="varchar" MaxLength="200" />
+    <Property Name="CreateDate" Type="datetime" Precision="0" />
+    <Property Name="CreateUserId" Type="varchar" MaxLength="50" />
+    <Property Name="CreateUserName" Type="varchar" MaxLength="50" />
+    <Property Name="ModifyDate" Type="datetime" Precision="0" />
+    <Property Name="ModifyUserId" Type="varchar" MaxLength="50" />
+    <Property Name="ModifyUserName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="base_moduleforminstance">
+    <Key>
+      <PropertyRef Name="FormInstanceId" />
+    </Key>
+    <Property Name="FormInstanceId" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="FormId" Type="varchar" MaxLength="50" />
+    <Property Name="FormInstanceJson" Type="varchar" MaxLength="2048" />
+    <Property Name="ObjectId" Type="varchar" MaxLength="50" />
+    <Property Name="SortCode" Type="int" />
+    <Property Name="Description" Type="varchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="base_newlog">
+    <Key>
+      <PropertyRef Name="bnl_guid" />
+    </Key>
+    <Property Name="bnl_guid" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="bnl_originUserId" Type="varchar" MaxLength="50" />
+    <Property Name="bnl_originOrganizeId" Type="varchar" MaxLength="50" />
+    <Property Name="bnl_type" Type="varchar" MaxLength="50" />
+    <Property Name="bnl_module" Type="varchar" MaxLength="50" />
+    <Property Name="bnl_datetime" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="bnl_desc" Type="varchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="base_news">
+    <Key>
+      <PropertyRef Name="NewsId" />
+    </Key>
+    <Property Name="NewsId" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="TypeId" Type="int" />
+    <Property Name="ParentId" Type="varchar" MaxLength="50" />
+    <Property Name="Category" Type="varchar" MaxLength="50" />
+    <Property Name="FullHead" Type="varchar" MaxLength="200" />
+    <Property Name="FullHeadColor" Type="varchar" MaxLength="50" />
+    <Property Name="BriefHead" Type="varchar" MaxLength="50" />
+    <Property Name="AuthorName" Type="varchar" MaxLength="50" />
+    <Property Name="CompileName" Type="varchar" MaxLength="50" />
+    <Property Name="TagWord" Type="varchar" MaxLength="200" />
+    <Property Name="Keyword" Type="varchar" MaxLength="200" />
+    <Property Name="SourceName" Type="varchar" MaxLength="50" />
+    <Property Name="SourceAddress" Type="varchar" MaxLength="50" />
+    <Property Name="NewsContent" Type="longtext" />
+    <Property Name="PV" Type="int" />
+    <Property Name="ReleaseTime" Type="datetime" Precision="0" />
+    <Property Name="SortCode" Type="int" />
+    <Property Name="DeleteMark" Type="int" />
+    <Property Name="EnabledMark" Type="int" />
+    <Property Name="Description" Type="varchar" MaxLength="200" />
+    <Property Name="CreateDate" Type="datetime" Precision="0" />
+    <Property Name="CreateUserId" Type="varchar" MaxLength="50" />
+    <Property Name="CreateUserName" Type="varchar" MaxLength="50" />
+    <Property Name="ModifyDate" Type="datetime" Precision="0" />
+    <Property Name="ModifyUserId" Type="varchar" MaxLength="50" />
+    <Property Name="ModifyUserName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="base_organize">
+    <Key>
+      <PropertyRef Name="OrganizeId" />
+    </Key>
+    <Property Name="OrganizeId" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Category" Type="int" />
+    <Property Name="ParentId" Type="varchar" MaxLength="50" />
+    <Property Name="EnCode" Type="varchar" MaxLength="50" />
+    <Property Name="ShortName" Type="varchar" MaxLength="1024" />
+    <Property Name="FullName" Type="varchar" MaxLength="1024" />
+    <Property Name="Nature" Type="varchar" MaxLength="50" />
+    <Property Name="OuterPhone" Type="varchar" MaxLength="50" />
+    <Property Name="InnerPhone" Type="varchar" MaxLength="50" />
+    <Property Name="Fax" Type="varchar" MaxLength="50" />
+    <Property Name="Postalcode" Type="varchar" MaxLength="50" />
+    <Property Name="Email" Type="varchar" MaxLength="50" />
+    <Property Name="ManagerId" Type="varchar" MaxLength="50" />
+    <Property Name="Manager" Type="varchar" MaxLength="50" />
+    <Property Name="ProvinceId" Type="varchar" MaxLength="50" />
+    <Property Name="CityId" Type="varchar" MaxLength="50" />
+    <Property Name="CountyId" Type="varchar" MaxLength="50" />
+    <Property Name="Address" Type="varchar" MaxLength="50" />
+    <Property Name="WebAddress" Type="varchar" MaxLength="200" />
+    <Property Name="FoundedTime" Type="datetime" Precision="0" />
+    <Property Name="BusinessScope" Type="varchar" MaxLength="200" />
+    <Property Name="Layer" Type="int" />
+    <Property Name="SortCode" Type="int" />
+    <Property Name="DeleteMark" Type="int" />
+    <Property Name="EnabledMark" Type="int" />
+    <Property Name="Description" Type="varchar" MaxLength="2048" />
+    <Property Name="CreateDate" Type="datetime" Precision="0" />
+    <Property Name="CreateUserId" Type="varchar" MaxLength="50" />
+    <Property Name="CreateUserName" Type="varchar" MaxLength="50" />
+    <Property Name="ModifyDate" Type="datetime" Precision="0" />
+    <Property Name="ModifyUserId" Type="varchar" MaxLength="50" />
+    <Property Name="ModifyUserName" Type="varchar" MaxLength="50" />
+    <Property Name="MachineCode" Type="varchar" MaxLength="1024" />
+    <Property Name="CertificateCode" Type="varchar" MaxLength="1024" />
+    <Property Name="ExistsActivityTotal" Type="int" />
+    <Property Name="ExistsArchiveTotal" Type="int" />
+    <Property Name="DataFrom" Type="varchar" MaxLength="50" />
+    <Property Name="IsSample" Type="int" />
+  </EntityType>
+  <EntityType Name="base_organizedetail">
+    <Key>
+      <PropertyRef Name="bod_guid" />
+    </Key>
+    <Property Name="bod_guid" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="bod_organizeId" Type="varchar" MaxLength="50" />
+    <Property Name="bod_willshowname" Type="int" />
+  </EntityType>
+  <EntityType Name="base_organizeextend">
+    <Key>
+      <PropertyRef Name="OrganizeExtendId" />
+    </Key>
+    <Property Name="OrganizeExtendId" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="OrganizeId" Type="varchar" MaxLength="50" />
+    <Property Name="Title" Type="varchar" MaxLength="128" />
+    <Property Name="Description" Type="varchar" MaxLength="2048" />
+    <Property Name="Status" Type="int" />
+    <Property Name="ThumbnailUrl" Type="longtext" />
+    <Property Name="BIMComposerID" Type="varchar" MaxLength="50" />
+    <Property Name="IsDel" Type="bool" />
+    <Property Name="IsPublic" Type="bool" />
+    <Property Name="IsPersonal" Type="bool" />
+    <Property Name="OwnerUnit" Type="varchar" MaxLength="1024" />
+    <Property Name="ConstructionUnit" Type="varchar" MaxLength="1024" />
+    <Property Name="DesignUnit" Type="varchar" MaxLength="1024" />
+    <Property Name="ProjectApprovalDate" Type="datetime" Precision="0" />
+  </EntityType>
+  <!--生成过程中发现错误:
+警告 6002: 表/视图“def.probim.base_organizeextendbak”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+  <EntityType Name="base_organizeextendbak">
+    <Key>
+      <PropertyRef Name="OrganizeExtendId" />
+    </Key>
+    <Property Name="OrganizeExtendId" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="OrganizeId" Type="varchar" MaxLength="50" />
+    <Property Name="Title" Type="varchar" MaxLength="128" />
+    <Property Name="Description" Type="varchar" MaxLength="2048" />
+    <Property Name="Status" Type="int" />
+    <Property Name="ThumbnailUrl" Type="varchar" MaxLength="128" />
+    <Property Name="BIMComposerID" Type="varchar" MaxLength="50" />
+    <Property Name="IsDel" Type="bool" />
+    <Property Name="IsPublic" Type="bool" />
+    <Property Name="IsPersonal" Type="bool" />
+    <Property Name="OwnerUnit" Type="varchar" MaxLength="1024" />
+    <Property Name="ConstructionUnit" Type="varchar" MaxLength="1024" />
+    <Property Name="DesignUnit" Type="varchar" MaxLength="1024" />
+    <Property Name="ProjectApprovalDate" Type="datetime" Precision="0" />
+  </EntityType>
+  <EntityType Name="base_organizegis">
+    <Key>
+      <PropertyRef Name="bog_guid" />
+    </Key>
+    <Property Name="bog_guid" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="bog_organizeId" Type="varchar" MaxLength="50" />
+    <Property Name="bog_longitude" Type="double" />
+    <Property Name="bog_latitude" Type="double" />
+    <Property Name="bog_height" Type="double" />
+  </EntityType>
+  <EntityType Name="base_organizeplus">
+    <Key>
+      <PropertyRef Name="bop_guid" />
+    </Key>
+    <Property Name="bop_guid" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="bop_organizeId" Type="varchar" MaxLength="50" />
+    <Property Name="bop_modelId" Type="varchar" MaxLength="50" />
+    <Property Name="bop_planId" Type="varchar" MaxLength="50" />
+    <Property Name="bop_modelphase" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="base_orgimg">
+    <Key>
+      <PropertyRef Name="boi_id" />
+    </Key>
+    <Property Name="boi_id" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="organizeId" Type="char" MaxLength="50" />
+    <Property Name="boi_smallimgurl" Type="longtext" />
+    <Property Name="boi_originimg" Type="varchar" MaxLength="512" />
+    <Property Name="boi_miniimg" Type="varchar" MaxLength="512" />
+  </EntityType>
+  <EntityType Name="base_projectnews">
+    <Key>
+      <PropertyRef Name="bpn_guid" />
+    </Key>
+    <Property Name="bpn_guid" Type="guid" Nullable="false" />
+    <Property Name="bpn_title" Type="mediumtext" />
+    <Property Name="bpn_content" Type="mediumtext" />
+    <Property Name="bpn_extjson" Type="varchar" MaxLength="255" />
+    <Property Name="OrganizeId" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <!--生成过程中发现错误:
+警告 6002: 表/视图“def.probim.base_projectnews_copy”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+  <EntityType Name="base_projectnews_copy">
+    <Key>
+      <PropertyRef Name="bpn_guid" />
+    </Key>
+    <Property Name="bpn_guid" Type="guid" Nullable="false" />
+    <Property Name="bpn_title" Type="mediumtext" />
+    <Property Name="bpn_content" Type="mediumtext" />
+    <Property Name="bpn_extjson" Type="varchar" MaxLength="255" />
+    <Property Name="OrganizeId" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="base_projectscore">
+    <Key>
+      <PropertyRef Name="ProjectScoreID" />
+    </Key>
+    <Property Name="ProjectScoreID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="OrganizeId" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Score" Type="int" Nullable="false" />
+    <Property Name="UserID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ModelCovery" Type="int" Nullable="false" />
+    <Property Name="ModelButter" Type="int" Nullable="false" />
+    <Property Name="ModelPara" Type="int" Nullable="false" />
+    <Property Name="ModelComplex" Type="int" Nullable="false" />
+    <Property Name="ModelBulid" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="base_projecttemplate">
+    <Key>
+      <PropertyRef Name="TemplateId" />
+    </Key>
+    <Property Name="TemplateId" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="TemplateName" Type="varchar" MaxLength="100" />
+    <Property Name="OrganizeId" Type="varchar" MaxLength="50" />
+    <Property Name="IsDel" Type="bit" />
+    <Property Name="CreateDate" Type="datetime" Precision="0" />
+    <Property Name="CreateUserId" Type="varchar" MaxLength="50" />
+    <Property Name="CreateUserName" Type="varchar" MaxLength="100" />
+    <Property Name="ModifyDate" Type="datetime" Precision="0" />
+    <Property Name="ModifyUserId" Type="varchar" MaxLength="50" />
+    <Property Name="ModifyUserName" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="base_publicextend">
+    <Key>
+      <PropertyRef Name="ExtendId" />
+    </Key>
+    <Property Name="ExtendId" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="PrimaryId" Type="varchar" MaxLength="50" />
+    <Property Name="Extend_1" Type="varchar" MaxLength="2000" />
+    <Property Name="Extend_1_Description" Type="varchar" MaxLength="100" />
+    <Property Name="Extend_2" Type="varchar" MaxLength="2000" />
+    <Property Name="Extend_2_Description" Type="varchar" MaxLength="100" />
+    <Property Name="Extend_3" Type="varchar" MaxLength="2000" />
+    <Property Name="Extend_3_Description" Type="varchar" MaxLength="100" />
+    <Property Name="Extend_4" Type="varchar" MaxLength="2000" />
+    <Property Name="Extend_4_Description" Type="varchar" MaxLength="100" />
+    <Property Name="Extend_5" Type="varchar" MaxLength="2000" />
+    <Property Name="Extend_5_Description" Type="varchar" MaxLength="100" />
+    <Property Name="Extend_6" Type="varchar" MaxLength="2000" />
+    <Property Name="Extend_6_Description" Type="varchar" MaxLength="100" />
+    <Property Name="CreateTime" Type="datetime" Precision="0" />
+  </EntityType>
+  <EntityType Name="base_relation">
+    <Key>
+      <PropertyRef Name="RelationID" />
+    </Key>
+    <Property Name="RelationID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="SourceID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="SourceType" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="TargetID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="TargetType" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="CreateDate" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="CreateUser" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="BR_DeleteMark" Type="int" />
+  </EntityType>
+  <EntityType Name="base_role">
+    <Key>
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="RoleId" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="OrganizeId" Type="varchar" MaxLength="50" />
+    <Property Name="Category" Type="int" />
+    <Property Name="EnCode" Type="varchar" MaxLength="50" />
+    <Property Name="FullName" Type="varchar" MaxLength="50" />
+    <Property Name="IsPublic" Type="int" />
+    <Property Name="OverdueTime" Type="datetime" Precision="0" />
+    <Property Name="SortCode" Type="int" />
+    <Property Name="DeleteMark" Type="int" />
+    <Property Name="EnabledMark" Type="int" />
+    <Property Name="Description" Type="varchar" MaxLength="200" />
+    <Property Name="CreateDate" Type="datetime" Precision="0" />
+    <Property Name="CreateUserId" Type="varchar" MaxLength="50" />
+    <Property Name="CreateUserName" Type="varchar" MaxLength="50" />
+    <Property Name="ModifyDate" Type="datetime" Precision="0" />
+    <Property Name="ModifyUserId" Type="varchar" MaxLength="50" />
+    <Property Name="ModifyUserName" Type="varchar" MaxLength="50" />
+    <Property Name="IsProjectManager" Type="bit" />
+    <Property Name="TemplateId" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="base_schedule">
+    <Key>
+      <PropertyRef Name="ScheduleId" />
+    </Key>
+    <Property Name="ScheduleId" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ScheduleName" Type="varchar" MaxLength="50" />
+    <Property Name="ScheduleContent" Type="varchar" MaxLength="200" />
+    <Property Name="Category" Type="varchar" MaxLength="50" />
+    <Property Name="StartDate" Type="datetime" Precision="0" />
+    <Property Name="StartTime" Type="varchar" MaxLength="50" />
+    <Property Name="EndDate" Type="datetime" Precision="0" />
+    <Property Name="EndTime" Type="varchar" MaxLength="50" />
+    <Property Name="Early" Type="int" />
+    <Property Name="IsMailAlert" Type="int" />
+    <Property Name="IsMobileAlert" Type="int" />
+    <Property Name="IsWeChatAlert" Type="int" />
+    <Property Name="ScheduleState" Type="int" />
+    <Property Name="SortCode" Type="int" />
+    <Property Name="DeleteMark" Type="int" />
+    <Property Name="EnabledMark" Type="int" />
+    <Property Name="Description" Type="varchar" MaxLength="200" />
+    <Property Name="CreateDate" Type="datetime" Precision="0" />
+    <Property Name="CreateUserId" Type="varchar" MaxLength="50" />
+    <Property Name="CreateUserName" Type="varchar" MaxLength="50" />
+    <Property Name="ModifyDate" Type="datetime" Precision="0" />
+    <Property Name="ModifyUserId" Type="varchar" MaxLength="50" />
+    <Property Name="ModifyUserName" Type="varchar" MaxLength="50" />
+    <Property Name="OrganizeId" Type="varchar" MaxLength="50" />
+    <Property Name="TaskTypeId" Type="varchar" MaxLength="50" />
+    <Property Name="Security" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="base_schedule_attachment">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ScheduleId" Type="varchar" MaxLength="50" />
+    <Property Name="FileName" Type="varchar" MaxLength="128" />
+    <Property Name="FilePath" Type="varchar" MaxLength="2000" Nullable="false" />
+    <Property Name="FileSize" Type="varchar" MaxLength="50" />
+    <Property Name="FileExtensions" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="FileType" Type="varchar" MaxLength="50" />
+    <Property Name="IsShare" Type="int" />
+    <Property Name="FileVersionId" Type="varchar" MaxLength="50" />
+    <Property Name="CreateTime" Type="datetime" Precision="0" />
+    <Property Name="CreateUserID" Type="varchar" MaxLength="50" />
+    <Property Name="IsDel" Type="int" />
+  </EntityType>
+  <EntityType Name="base_schedule_participant">
+    <Key>
+      <PropertyRef Name="Organized_participantId" />
+    </Key>
+    <Property Name="Organized_participantId" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ScheduleId" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="UserID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CreateTime" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="Updated" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="Removed" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="base_specialpw">
+    <Key>
+      <PropertyRef Name="Spacialpw_ID" />
+    </Key>
+    <Property Name="Spacialpw_ID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="UserID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Account" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Specialpw" Type="varchar" MaxLength="1000" Nullable="false" />
+  </EntityType>
+  <EntityType Name="base_template_folder">
+    <Key>
+      <PropertyRef Name="TemplatefolderID" />
+    </Key>
+    <Property Name="TemplatefolderID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="TemplateId" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="TemplateName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="folderJson" Type="varchar" MaxLength="10000" Nullable="false" />
+    <Property Name="CreateDate" Type="datetime" Precision="0" Nullable="false" />
+  </EntityType>
+  <EntityType Name="base_user">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="EnCode" Type="varchar" MaxLength="50" />
+    <Property Name="Account" Type="varchar" MaxLength="50" />
+    <Property Name="Password" Type="varchar" MaxLength="50" />
+    <Property Name="Secretkey" Type="varchar" MaxLength="50" />
+    <Property Name="RealName" Type="varchar" MaxLength="50" />
+    <Property Name="NickName" Type="varchar" MaxLength="50" />
+    <Property Name="HeadIcon" Type="varchar" MaxLength="200" />
+    <Property Name="QuickQuery" Type="varchar" MaxLength="200" />
+    <Property Name="SimpleSpelling" Type="varchar" MaxLength="200" />
+    <Property Name="Gender" Type="int" />
+    <Property Name="Birthday" Type="datetime" Precision="0" />
+    <Property Name="Mobile" Type="varchar" MaxLength="50" />
+    <Property Name="Telephone" Type="varchar" MaxLength="50" />
+    <Property Name="Email" Type="varchar" MaxLength="50" />
+    <Property Name="OICQ" Type="varchar" MaxLength="50" />
+    <Property Name="WeChat" Type="varchar" MaxLength="50" />
+    <Property Name="MSN" Type="varchar" MaxLength="50" />
+    <Property Name="ManagerId" Type="varchar" MaxLength="50" />
+    <Property Name="Manager" Type="varchar" MaxLength="50" />
+    <Property Name="OrganizeId" Type="varchar" MaxLength="50" />
+    <Property Name="DepartmentId" Type="varchar" MaxLength="50" />
+    <Property Name="RoleId" Type="varchar" MaxLength="50" />
+    <Property Name="DutyId" Type="varchar" MaxLength="50" />
+    <Property Name="DutyName" Type="varchar" MaxLength="50" />
+    <Property Name="PostId" Type="varchar" MaxLength="50" />
+    <Property Name="PostName" Type="varchar" MaxLength="50" />
+    <Property Name="WorkGroupId" Type="varchar" MaxLength="50" />
+    <Property Name="SecurityLevel" Type="int" />
+    <Property Name="UserOnLine" Type="int" />
+    <Property Name="OpenId" Type="varchar" MaxLength="50" />
+    <Property Name="Question" Type="varchar" MaxLength="50" />
+    <Property Name="AnswerQuestion" Type="varchar" MaxLength="50" />
+    <Property Name="CheckOnLine" Type="int" />
+    <Property Name="AllowStartTime" Type="datetime" Precision="0" />
+    <Property Name="AllowEndTime" Type="datetime" Precision="0" />
+    <Property Name="LockStartDate" Type="datetime" Precision="0" />
+    <Property Name="LockEndDate" Type="datetime" Precision="0" />
+    <Property Name="FirstVisit" Type="datetime" Precision="0" />
+    <Property Name="PreviousVisit" Type="datetime" Precision="0" />
+    <Property Name="LastVisit" Type="datetime" Precision="0" />
+    <Property Name="LogOnCount" Type="int" />
+    <Property Name="SortCode" Type="int" />
+    <Property Name="DeleteMark" Type="int" />
+    <Property Name="EnabledMark" Type="int" />
+    <Property Name="Description" Type="varchar" MaxLength="200" />
+    <Property Name="CreateDate" Type="datetime" Precision="0" />
+    <Property Name="CreateUserId" Type="varchar" MaxLength="50" />
+    <Property Name="CreateUserName" Type="varchar" MaxLength="50" />
+    <Property Name="ModifyDate" Type="datetime" Precision="0" />
+    <Property Name="ModifyUserId" Type="varchar" MaxLength="50" />
+    <Property Name="ModifyUserName" Type="varchar" MaxLength="50" />
+    <Property Name="UserType" Type="varchar" MaxLength="50" />
+    <Property Name="DataFrom" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <!--生成过程中发现错误:
+警告 6002: 表/视图“def.probim.base_user_bak”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+  <EntityType Name="base_user_bak">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="EnCode" Type="varchar" MaxLength="50" />
+    <Property Name="Account" Type="varchar" MaxLength="50" />
+    <Property Name="Password" Type="varchar" MaxLength="50" />
+    <Property Name="Secretkey" Type="varchar" MaxLength="50" />
+    <Property Name="RealName" Type="varchar" MaxLength="50" />
+    <Property Name="NickName" Type="varchar" MaxLength="50" />
+    <Property Name="HeadIcon" Type="varchar" MaxLength="200" />
+    <Property Name="QuickQuery" Type="varchar" MaxLength="200" />
+    <Property Name="SimpleSpelling" Type="varchar" MaxLength="200" />
+    <Property Name="Gender" Type="int" />
+    <Property Name="Birthday" Type="datetime" Precision="0" />
+    <Property Name="Mobile" Type="varchar" MaxLength="50" />
+    <Property Name="Telephone" Type="varchar" MaxLength="50" />
+    <Property Name="Email" Type="varchar" MaxLength="50" />
+    <Property Name="OICQ" Type="varchar" MaxLength="50" />
+    <Property Name="WeChat" Type="varchar" MaxLength="50" />
+    <Property Name="MSN" Type="varchar" MaxLength="50" />
+    <Property Name="ManagerId" Type="varchar" MaxLength="50" />
+    <Property Name="Manager" Type="varchar" MaxLength="50" />
+    <Property Name="OrganizeId" Type="varchar" MaxLength="50" />
+    <Property Name="DepartmentId" Type="varchar" MaxLength="50" />
+    <Property Name="RoleId" Type="varchar" MaxLength="50" />
+    <Property Name="DutyId" Type="varchar" MaxLength="50" />
+    <Property Name="DutyName" Type="varchar" MaxLength="50" />
+    <Property Name="PostId" Type="varchar" MaxLength="50" />
+    <Property Name="PostName" Type="varchar" MaxLength="50" />
+    <Property Name="WorkGroupId" Type="varchar" MaxLength="50" />
+    <Property Name="SecurityLevel" Type="int" />
+    <Property Name="UserOnLine" Type="int" />
+    <Property Name="OpenId" Type="varchar" MaxLength="50" />
+    <Property Name="Question" Type="varchar" MaxLength="50" />
+    <Property Name="AnswerQuestion" Type="varchar" MaxLength="50" />
+    <Property Name="CheckOnLine" Type="int" />
+    <Property Name="AllowStartTime" Type="datetime" Precision="0" />
+    <Property Name="AllowEndTime" Type="datetime" Precision="0" />
+    <Property Name="LockStartDate" Type="datetime" Precision="0" />
+    <Property Name="LockEndDate" Type="datetime" Precision="0" />
+    <Property Name="FirstVisit" Type="datetime" Precision="0" />
+    <Property Name="PreviousVisit" Type="datetime" Precision="0" />
+    <Property Name="LastVisit" Type="datetime" Precision="0" />
+    <Property Name="LogOnCount" Type="int" />
+    <Property Name="SortCode" Type="int" />
+    <Property Name="DeleteMark" Type="int" />
+    <Property Name="EnabledMark" Type="int" />
+    <Property Name="Description" Type="varchar" MaxLength="200" />
+    <Property Name="CreateDate" Type="datetime" Precision="0" />
+    <Property Name="CreateUserId" Type="varchar" MaxLength="50" />
+    <Property Name="CreateUserName" Type="varchar" MaxLength="50" />
+    <Property Name="ModifyDate" Type="datetime" Precision="0" />
+    <Property Name="ModifyUserId" Type="varchar" MaxLength="50" />
+    <Property Name="ModifyUserName" Type="varchar" MaxLength="50" />
+    <Property Name="UserType" Type="varchar" MaxLength="50" />
+    <Property Name="DataFrom" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="base_userext">
+    <Key>
+      <PropertyRef Name="bue_guid" />
+    </Key>
+    <Property Name="bue_guid" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="bue_userId" Type="varchar" MaxLength="50" />
+    <Property Name="bue_existspjcnt" Type="int" />
+    <Property Name="bue_totalpjcnt" Type="int" />
+    <Property Name="bue_updatetime" Type="datetime" Precision="0" />
+    <Property Name="bue_updateuser" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="base_userrelation">
+    <Key>
+      <PropertyRef Name="UserRelationId" />
+    </Key>
+    <Property Name="UserRelationId" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="UserId" Type="varchar" MaxLength="50" />
+    <Property Name="Category" Type="int" />
+    <Property Name="ObjectId" Type="varchar" MaxLength="50" />
+    <Property Name="IsDefault" Type="int" />
+    <Property Name="SortCode" Type="int" />
+    <Property Name="CreateDate" Type="datetime" Precision="0" />
+    <Property Name="CreateUserId" Type="varchar" MaxLength="50" />
+    <Property Name="CreateUserName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="base_usertag">
+    <Key>
+      <PropertyRef Name="but_guid" />
+    </Key>
+    <Property Name="but_guid" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="but_userId" Type="varchar" MaxLength="50" />
+    <Property Name="but_companyId" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="bimcomp_attach">
+    <Key>
+      <PropertyRef Name="bca_guid" />
+    </Key>
+    <Property Name="bca_guid" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="bcfa_guid" Type="varchar" MaxLength="50" />
+    <Property Name="bcf_md5" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="bimcomp_category">
+    <Key>
+      <PropertyRef Name="bcc_guid" />
+    </Key>
+    <Property Name="bcc_guid" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="bcc_organizeId" Type="varchar" MaxLength="50" />
+    <Property Name="bcc_name" Type="varchar" MaxLength="50" />
+    <Property Name="bcc_code" Type="varchar" MaxLength="50" />
+    <Property Name="bcc_curlevelnumber" Type="int" />
+    <Property Name="bcc_description" Type="varchar" MaxLength="200" />
+    <Property Name="bcc_updatetime" Type="datetime" Precision="0" />
+  </EntityType>
+  <EntityType Name="bimcomp_family">
+    <Key>
+      <PropertyRef Name="bcfa_guid" />
+    </Key>
+    <Property Name="bcfa_guid" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="bcfa_name" Type="varchar" MaxLength="50" />
+    <Property Name="bcfa_description" Type="varchar" MaxLength="50" />
+    <Property Name="bcfa_updatetime" Type="datetime" Precision="0" />
+    <Property Name="bcfa_filelogicname" Type="varchar" MaxLength="50" />
+    <Property Name="bcf_md5" Type="varchar" MaxLength="50" />
+    <Property Name="bcf_imgmd5" Type="varchar" MaxLength="50" />
+    <Property Name="bcfa_refguid" Type="varchar" MaxLength="50" />
+    <Property Name="bcc_guid" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="bimcomp_faprop">
+    <Key>
+      <PropertyRef Name="bcfap_guid" />
+    </Key>
+    <Property Name="bcfap_guid" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="bcfap_name" Type="varchar" MaxLength="50" />
+    <Property Name="bcfap_value" Type="varchar" MaxLength="50" />
+    <Property Name="bcfapc_guid" Type="varchar" MaxLength="50" />
+    <Property Name="bcfa_guid" Type="varchar" MaxLength="50" />
+    <Property Name="bcfap_modelnumber" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="bimcomp_fapropcategory">
+    <Key>
+      <PropertyRef Name="bcfapc_guid" />
+    </Key>
+    <Property Name="bcfapc_guid" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="bcfapc_name" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="bimcomp_file">
+    <Key>
+      <PropertyRef Name="bcf_md5" />
+    </Key>
+    <Property Name="bcf_md5" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="bcf_size" Type="int" />
+    <Property Name="bcf_path" Type="varchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="bimcomp_relmodel">
+    <Key>
+      <PropertyRef Name="bcrm_guid" />
+    </Key>
+    <Property Name="bcrm_guid" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="bcfa_guid" Type="varchar" MaxLength="50" />
+    <Property Name="bcrm_modelid" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="bimcomp_reltag">
+    <Key>
+      <PropertyRef Name="bcrt_guid" />
+    </Key>
+    <Property Name="bcrt_guid" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="bcfa_guid" Type="varchar" MaxLength="50" />
+    <Property Name="bct_guid" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="bimcomp_tag">
+    <Key>
+      <PropertyRef Name="bct_guid" />
+    </Key>
+    <Property Name="bct_guid" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="bct_name" Type="varchar" MaxLength="45" />
+    <Property Name="bct_organizeId" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="cfg_urls">
+    <Key>
+      <PropertyRef Name="cu_guid" />
+    </Key>
+    <Property Name="cu_guid" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="cu_entcode" Type="varchar" MaxLength="50" />
+    <Property Name="cu_urltype" Type="varchar" MaxLength="50" />
+    <Property Name="cu_url" Type="varchar" MaxLength="50" />
+    <Property Name="cu_desc" Type="varchar" MaxLength="1024" />
+  </EntityType>
+  <EntityType Name="client_cashbalance">
+    <Key>
+      <PropertyRef Name="CashBalanceId" />
+    </Key>
+    <Property Name="CashBalanceId" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ObjectId" Type="varchar" MaxLength="50" />
+    <Property Name="ExecutionDate" Type="datetime" Precision="0" />
+    <Property Name="CashAccount" Type="varchar" MaxLength="50" />
+    <Property Name="Receivable" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Expenses" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Balance" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Abstract" Type="varchar" MaxLength="200" />
+    <Property Name="SortCode" Type="int" />
+    <Property Name="DeleteMark" Type="int" />
+    <Property Name="EnabledMark" Type="int" />
+    <Property Name="Description" Type="varchar" MaxLength="200" />
+    <Property Name="CreateDate" Type="datetime" Precision="0" />
+    <Property Name="CreateUserId" Type="varchar" MaxLength="50" />
+    <Property Name="CreateUserName" Type="varchar" MaxLength="50" />
+    <Property Name="ModifyDate" Type="datetime" Precision="0" />
+    <Property Name="ModifyUserId" Type="varchar" MaxLength="50" />
+    <Property Name="ModifyUserName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="client_chance">
+    <Key>
+      <PropertyRef Name="ChanceId" />
+    </Key>
+    <Property Name="ChanceId" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="EnCode" Type="varchar" MaxLength="50" />
+    <Property Name="FullName" Type="varchar" MaxLength="50" />
+    <Property Name="SourceId" Type="varchar" MaxLength="50" />
+    <Property Name="StageId" Type="varchar" MaxLength="50" />
+    <Property Name="SuccessRate" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="Amount" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="Profit" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="ChanceTypeId" Type="varchar" MaxLength="50" />
+    <Property Name="SaleCost" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="DealDate" Type="datetime" Precision="0" />
+    <Property Name="IsToCustom" Type="int" />
+    <Property Name="CompanyName" Type="varchar" MaxLength="200" />
+    <Property Name="CompanyNatureId" Type="varchar" MaxLength="50" />
+    <Property Name="CompanyAddress" Type="varchar" MaxLength="200" />
+    <Property Name="CompanySite" Type="varchar" MaxLength="50" />
+    <Property Name="CompanyDesc" Type="varchar" MaxLength="2048" />
+    <Property Name="Province" Type="varchar" MaxLength="50" />
+    <Property Name="City" Type="varchar" MaxLength="50" />
+    <Property Name="Contacts" Type="varchar" MaxLength="50" />
+    <Property Name="Mobile" Type="varchar" MaxLength="50" />
+    <Property Name="Tel" Type="varchar" MaxLength="50" />
+    <Property Name="Fax" Type="varchar" MaxLength="50" />
+    <Property Name="QQ" Type="varchar" MaxLength="50" />
+    <Property Name="Email" Type="varchar" MaxLength="50" />
+    <Property Name="Wechat" Type="varchar" MaxLength="50" />
+    <Property Name="Hobby" Type="varchar" MaxLength="200" />
+    <Property Name="TraceUserId" Type="varchar" MaxLength="50" />
+    <Property Name="TraceUserName" Type="varchar" MaxLength="50" />
+    <Property Name="ChanceState" Type="int" />
+    <Property Name="AlertDateTime" Type="datetime" Precision="0" />
+    <Property Name="AlertState" Type="int" />
+    <Property Name="SortCode" Type="int" />
+    <Property Name="DeleteMark" Type="int" />
+    <Property Name="EnabledMark" Type="int" />
+    <Property Name="Description" Type="varchar" MaxLength="200" />
+    <Property Name="CreateDate" Type="datetime" Precision="0" />
+    <Property Name="CreateUserId" Type="varchar" MaxLength="50" />
+    <Property Name="CreateUserName" Type="varchar" MaxLength="50" />
+    <Property Name="ModifyDate" Type="datetime" Precision="0" />
+    <Property Name="ModifyUserId" Type="varchar" MaxLength="50" />
+    <Property Name="ModifyUserName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="client_customer">
+    <Key>
+      <PropertyRef Name="CustomerId" />
+    </Key>
+    <Property Name="CustomerId" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="EnCode" Type="varchar" MaxLength="50" />
+    <Property Name="FullName" Type="varchar" MaxLength="50" />
+    <Property Name="ShortName" Type="varchar" MaxLength="50" />
+    <Property Name="CustIndustryId" Type="varchar" MaxLength="50" />
+    <Property Name="CustTypeId" Type="varchar" MaxLength="50" />
+    <Property Name="CustLevelId" Type="varchar" MaxLength="50" />
+    <Property Name="CustDegreeId" Type="varchar" MaxLength="50" />
+    <Property Name="Province" Type="varchar" MaxLength="50" />
+    <Property Name="City" Type="varchar" MaxLength="50" />
+    <Property Name="Contact" Type="varchar" MaxLength="50" />
+    <Property Name="Mobile" Type="varchar" MaxLength="50" />
+    <Property Name="Tel" Type="varchar" MaxLength="50" />
+    <Property Name="Fax" Type="varchar" MaxLength="50" />
+    <Property Name="QQ" Type="varchar" MaxLength="50" />
+    <Property Name="Email" Type="varchar" MaxLength="50" />
+    <Property Name="Wechat" Type="varchar" MaxLength="50" />
+    <Property Name="Hobby" Type="varchar" MaxLength="50" />
+    <Property Name="LegalPerson" Type="varchar" MaxLength="50" />
+    <Property Name="CompanyAddress" Type="varchar" MaxLength="200" />
+    <Property Name="CompanySite" Type="varchar" MaxLength="50" />
+    <Property Name="CompanyDesc" Type="varchar" MaxLength="2048" />
+    <Property Name="TraceUserId" Type="varchar" MaxLength="50" />
+    <Property Name="TraceUserName" Type="varchar" MaxLength="50" />
+    <Property Name="AlertDateTime" Type="datetime" Precision="0" />
+    <Property Name="AlertState" Type="int" />
+    <Property Name="SortCode" Type="int" />
+    <Property Name="DeleteMark" Type="int" />
+    <Property Name="EnabledMark" Type="int" />
+    <Property Name="Description" Type="varchar" MaxLength="200" />
+    <Property Name="CreateDate" Type="datetime" Precision="0" />
+    <Property Name="CreateUserId" Type="varchar" MaxLength="50" />
+    <Property Name="CreateUserName" Type="varchar" MaxLength="50" />
+    <Property Name="ModifyDate" Type="datetime" Precision="0" />
+    <Property Name="ModifyUserId" Type="varchar" MaxLength="50" />
+    <Property Name="ModifyUserName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="client_customercontact">
+    <Key>
+      <PropertyRef Name="CustomerContactId" />
+    </Key>
+    <Property Name="CustomerContactId" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CustomerId" Type="varchar" MaxLength="50" />
+    <Property Name="Contact" Type="varchar" MaxLength="50" />
+    <Property Name="Gender" Type="int" />
+    <Property Name="Mobile" Type="varchar" MaxLength="50" />
+    <Property Name="Tel" Type="varchar" MaxLength="50" />
+    <Property Name="Fax" Type="varchar" MaxLength="50" />
+    <Property Name="QQ" Type="varchar" MaxLength="50" />
+    <Property Name="Email" Type="varchar" MaxLength="50" />
+    <Property Name="Wechat" Type="varchar" MaxLength="50" />
+    <Property Name="PostId" Type="varchar" MaxLength="50" />
+    <Property Name="Hobby" Type="varchar" MaxLength="50" />
+    <Property Name="SortCode" Type="int" />
+    <Property Name="DeleteMark" Type="int" />
+    <Property Name="EnabledMark" Type="int" />
+    <Property Name="Description" Type="varchar" MaxLength="200" />
+    <Property Name="CreateDate" Type="datetime" Precision="0" />
+    <Property Name="CreateUserId" Type="varchar" MaxLength="50" />
+    <Property Name="CreateUserName" Type="varchar" MaxLength="50" />
+    <Property Name="ModifyDate" Type="datetime" Precision="0" />
+    <Property Name="ModifyUserId" Type="varchar" MaxLength="50" />
+    <Property Name="ModifyUserName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="client_expenses">
+    <Key>
+      <PropertyRef Name="ExpensesId" />
+    </Key>
+    <Property Name="ExpensesId" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ExpensesDate" Type="datetime" Precision="0" />
+    <Property Name="ExpensesPrice" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="ExpensesAccount" Type="varchar" MaxLength="50" />
+    <Property Name="ExpensesType" Type="varchar" MaxLength="50" />
+    <Property Name="ExpensesAbstract" Type="varchar" MaxLength="200" />
+    <Property Name="SortCode" Type="int" />
+    <Property Name="DeleteMark" Type="int" />
+    <Property Name="EnabledMark" Type="int" />
+    <Property Name="Description" Type="varchar" MaxLength="200" />
+    <Property Name="CreateDate" Type="datetime" Precision="0" />
+    <Property Name="CreateUserId" Type="varchar" MaxLength="50" />
+    <Property Name="CreateUserName" Type="varchar" MaxLength="50" />
+    <Property Name="ModifyDate" Type="datetime" Precision="0" />
+    <Property Name="ModifyUserId" Type="varchar" MaxLength="50" />
+    <Property Name="ModifyUserName" Type="varchar" MaxLength="50" />
+    <Property Name="ExpensesObject" Type="int" />
+    <Property Name="Managers" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="client_invoice">
+    <Key>
+      <PropertyRef Name="InvoiceId" />
+    </Key>
+    <Property Name="InvoiceId" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CustomerId" Type="varchar" MaxLength="50" />
+    <Property Name="CustomerCode" Type="varchar" MaxLength="50" />
+    <Property Name="CustomerName" Type="varchar" MaxLength="50" />
+    <Property Name="InvoiceContent" Type="varchar" MaxLength="2048" />
+    <Property Name="SortCode" Type="int" />
+    <Property Name="DeleteMark" Type="int" />
+    <Property Name="EnabledMark" Type="int" />
+    <Property Name="Description" Type="varchar" MaxLength="200" />
+    <Property Name="CreateDate" Type="datetime" Precision="0" />
+    <Property Name="CreateUserId" Type="varchar" MaxLength="50" />
+    <Property Name="CreateUserName" Type="varchar" MaxLength="50" />
+    <Property Name="ModifyDate" Type="datetime" Precision="0" />
+    <Property Name="ModifyUserId" Type="varchar" MaxLength="50" />
+    <Property Name="ModifyUserName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="client_order">
+    <Key>
+      <PropertyRef Name="OrderId" />
+    </Key>
+    <Property Name="OrderId" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CustomerId" Type="varchar" MaxLength="50" />
+    <Property Name="CustomerName" Type="varchar" MaxLength="50" />
+    <Property Name="SellerId" Type="varchar" MaxLength="50" />
+    <Property Name="SellerName" Type="varchar" MaxLength="50" />
+    <Property Name="OrderDate" Type="datetime" Precision="0" />
+    <Property Name="OrderCode" Type="varchar" MaxLength="50" />
+    <Property Name="DiscountSum" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Accounts" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="ReceivedAmount" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="PaymentDate" Type="datetime" Precision="0" />
+    <Property Name="PaymentMode" Type="varchar" MaxLength="50" />
+    <Property Name="PaymentState" Type="int" />
+    <Property Name="SaleCost" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="AbstractInfo" Type="varchar" MaxLength="200" />
+    <Property Name="ContractCode" Type="varchar" MaxLength="50" />
+    <Property Name="ContractFile" Type="varchar" MaxLength="200" />
+    <Property Name="SortCode" Type="int" />
+    <Property Name="DeleteMark" Type="int" />
+    <Property Name="EnabledMark" Type="int" />
+    <Property Name="Description" Type="varchar" MaxLength="200" />
+    <Property Name="CreateDate" Type="datetime" Precision="0" />
+    <Property Name="CreateUserId" Type="varchar" MaxLength="50" />
+    <Property Name="CreateUserName" Type="varchar" MaxLength="50" />
+    <Property Name="ModifyDate" Type="datetime" Precision="0" />
+    <Property Name="ModifyUserId" Type="varchar" MaxLength="50" />
+    <Property Name="ModifyUserName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="client_orderentry">
+    <Key>
+      <PropertyRef Name="OrderEntryId" />
+    </Key>
+    <Property Name="OrderEntryId" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="OrderId" Type="varchar" MaxLength="50" />
+    <Property Name="ProductId" Type="varchar" MaxLength="50" />
+    <Property Name="ProductCode" Type="varchar" MaxLength="50" />
+    <Property Name="ProductName" Type="varchar" MaxLength="200" />
+    <Property Name="UnitId" Type="varchar" MaxLength="50" />
+    <Property Name="Qty" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Price" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Amount" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Taxprice" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="TaxRate" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Tax" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="TaxAmount" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="SortCode" Type="int" />
+    <Property Name="DeleteMark" Type="int" />
+    <Property Name="EnabledMark" Type="int" />
+    <Property Name="Description" Type="varchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="client_receivable">
+    <Key>
+      <PropertyRef Name="ReceivableId" />
+    </Key>
+    <Property Name="ReceivableId" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="OrderId" Type="varchar" MaxLength="50" />
+    <Property Name="PaymentTime" Type="datetime" Precision="0" />
+    <Property Name="PaymentPrice" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="PaymentMode" Type="varchar" MaxLength="50" />
+    <Property Name="PaymentAccount" Type="varchar" MaxLength="50" />
+    <Property Name="SortCode" Type="int" />
+    <Property Name="DeleteMark" Type="int" />
+    <Property Name="EnabledMark" Type="int" />
+    <Property Name="Description" Type="varchar" MaxLength="200" />
+    <Property Name="CreateDate" Type="datetime" Precision="0" />
+    <Property Name="CreateUserId" Type="varchar" MaxLength="50" />
+    <Property Name="CreateUserName" Type="varchar" MaxLength="50" />
+    <Property Name="ModifyDate" Type="datetime" Precision="0" />
+    <Property Name="ModifyUserId" Type="varchar" MaxLength="50" />
+    <Property Name="ModifyUserName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="client_trailrecord">
+    <Key>
+      <PropertyRef Name="TrailId" />
+    </Key>
+    <Property Name="TrailId" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ObjectSort" Type="int" />
+    <Property Name="ObjectId" Type="varchar" MaxLength="50" />
+    <Property Name="TrackContent" Type="varchar" MaxLength="200" />
+    <Property Name="SortCode" Type="int" />
+    <Property Name="DeleteMark" Type="int" />
+    <Property Name="EnabledMark" Type="int" />
+    <Property Name="Description" Type="varchar" MaxLength="200" />
+    <Property Name="CreateDate" Type="datetime" Precision="0" />
+    <Property Name="CreateUserId" Type="varchar" MaxLength="50" />
+    <Property Name="CreateUserName" Type="varchar" MaxLength="50" />
+    <Property Name="ModifyDate" Type="datetime" Precision="0" />
+    <Property Name="ModifyUserId" Type="varchar" MaxLength="50" />
+    <Property Name="ModifyUserName" Type="varchar" MaxLength="50" />
+    <Property Name="TrackTypeId" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="com_pdf_cache">
+    <Key>
+      <PropertyRef Name="Com_pdf_cache_ID" />
+    </Key>
+    <Property Name="Com_pdf_cache_ID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="PdfId" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CacheId" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <!--生成过程中发现错误:
+警告 6002: 表/视图“def.probim.del_plustask1”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+  <EntityType Name="del_plustask1">
+    <Key>
+      <PropertyRef Name="UID_" />
+    </Key>
+    <Property Name="UID_" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ID_" Type="int" />
+    <Property Name="NAME_" Type="varchar" MaxLength="200" />
+    <Property Name="START_" Type="datetime" Precision="0" />
+    <Property Name="FINISH_" Type="datetime" Precision="0" />
+    <Property Name="DURATION_" Type="int" />
+    <Property Name="WORK_" Type="int" />
+    <Property Name="PERCENTCOMPLETE_" Type="int" />
+    <Property Name="MANUAL_" Type="int" />
+    <Property Name="WEIGHT_" Type="int" />
+    <Property Name="CONSTRAINTTYPE_" Type="int" />
+    <Property Name="CONSTRAINTDATE_" Type="datetime" Precision="0" />
+    <Property Name="MILESTONE_" Type="int" />
+    <Property Name="SUMMARY_" Type="int" />
+    <Property Name="CRITICAL_" Type="int" />
+    <Property Name="PRIORITY_" Type="int" />
+    <Property Name="NOTES_" Type="text" />
+    <Property Name="DEPARTMENT_" Type="varchar" MaxLength="50" />
+    <Property Name="PRINCIPAL_" Type="varchar" MaxLength="500" />
+    <Property Name="PREDECESSORLINK_" Type="text" />
+    <Property Name="FIXEDDATE_" Type="int" />
+    <Property Name="PARENTTASKUID_" Type="varchar" MaxLength="50" />
+    <Property Name="PROJECTUID_" Type="varchar" MaxLength="50" />
+    <Property Name="ACTUALSTART_" Type="datetime" Precision="0" />
+    <Property Name="ACTUALFINISH_" Type="datetime" Precision="0" />
+    <Property Name="ACTUALDURATION_" Type="int" />
+    <Property Name="ASSIGNMENTS_" Type="text" />
+    <Property Name="WBS_" Type="varchar" MaxLength="200" />
+    <Property Name="CRITICAL2_" Type="int" />
+  </EntityType>
+  <!--生成过程中发现错误:
+警告 6002: 表/视图“def.probim.del_plustask2”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+  <EntityType Name="del_plustask2">
+    <Key>
+      <PropertyRef Name="UID_" />
+    </Key>
+    <Property Name="UID_" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ID_" Type="int" />
+    <Property Name="NAME_" Type="varchar" MaxLength="200" />
+    <Property Name="START_" Type="datetime" Precision="0" />
+    <Property Name="FINISH_" Type="datetime" Precision="0" />
+    <Property Name="DURATION_" Type="int" />
+    <Property Name="WORK_" Type="int" />
+    <Property Name="PERCENTCOMPLETE_" Type="int" />
+    <Property Name="MANUAL_" Type="int" />
+    <Property Name="WEIGHT_" Type="int" />
+    <Property Name="CONSTRAINTTYPE_" Type="int" />
+    <Property Name="CONSTRAINTDATE_" Type="datetime" Precision="0" />
+    <Property Name="MILESTONE_" Type="int" />
+    <Property Name="SUMMARY_" Type="int" />
+    <Property Name="CRITICAL_" Type="int" />
+    <Property Name="PRIORITY_" Type="int" />
+    <Property Name="NOTES_" Type="text" />
+    <Property Name="DEPARTMENT_" Type="varchar" MaxLength="50" />
+    <Property Name="PRINCIPAL_" Type="varchar" MaxLength="500" />
+    <Property Name="PREDECESSORLINK_" Type="text" />
+    <Property Name="FIXEDDATE_" Type="int" />
+    <Property Name="PARENTTASKUID_" Type="varchar" MaxLength="50" />
+    <Property Name="PROJECTUID_" Type="varchar" MaxLength="50" />
+    <Property Name="ACTUALSTART_" Type="datetime" Precision="0" />
+    <Property Name="ACTUALFINISH_" Type="datetime" Precision="0" />
+    <Property Name="ACTUALDURATION_" Type="int" />
+    <Property Name="ASSIGNMENTS_" Type="text" />
+    <Property Name="WBS_" Type="varchar" MaxLength="200" />
+    <Property Name="CRITICAL2_" Type="int" />
+  </EntityType>
+  <EntityType Name="email_addressee">
+    <Key>
+      <PropertyRef Name="AddresseeId" />
+    </Key>
+    <Property Name="AddresseeId" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ContentId" Type="varchar" MaxLength="50" />
+    <Property Name="CategoryId" Type="varchar" MaxLength="50" />
+    <Property Name="RecipientId" Type="varchar" MaxLength="50" />
+    <Property Name="RecipientName" Type="varchar" MaxLength="50" />
+    <Property Name="RecipientState" Type="int" />
+    <Property Name="IsRead" Type="int" />
+    <Property Name="ReadCount" Type="int" />
+    <Property Name="ReadDate" Type="datetime" Precision="0" />
+    <Property Name="IsHighlight" Type="int" />
+    <Property Name="Backlog" Type="int" />
+    <Property Name="DeleteMark" Type="int" />
+    <Property Name="CreateDate" Type="datetime" Precision="0" />
+    <Property Name="CreateUserId" Type="varchar" MaxLength="50" />
+    <Property Name="CreateUserName" Type="varchar" MaxLength="50" />
+    <Property Name="ModifyDate" Type="datetime" Precision="0" />
+    <Property Name="ModifyUserId" Type="varchar" MaxLength="50" />
+    <Property Name="ModifyUserName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="email_category">
+    <Key>
+      <PropertyRef Name="CategoryId" />
+    </Key>
+    <Property Name="CategoryId" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="FullName" Type="varchar" MaxLength="50" />
+    <Property Name="SortCode" Type="int" />
+    <Property Name="DeleteMark" Type="int" />
+    <Property Name="EnabledMark" Type="int" />
+    <Property Name="Description" Type="varchar" MaxLength="200" />
+    <Property Name="CreateDate" Type="datetime" Precision="0" />
+    <Property Name="CreateUserId" Type="varchar" MaxLength="50" />
+    <Property Name="CreateUserName" Type="varchar" MaxLength="50" />
+    <Property Name="ModifyDate" Type="datetime" Precision="0" />
+    <Property Name="ModifyUserId" Type="varchar" MaxLength="50" />
+    <Property Name="ModifyUserName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="email_content">
+    <Key>
+      <PropertyRef Name="ContentId" />
+    </Key>
+    <Property Name="ContentId" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CategoryId" Type="varchar" MaxLength="50" />
+    <Property Name="ParentId" Type="varchar" MaxLength="50" />
+    <Property Name="Theme" Type="varchar" MaxLength="200" />
+    <Property Name="ThemeColor" Type="varchar" MaxLength="50" />
+    <Property Name="EmailContent" Type="longtext" />
+    <Property Name="EmailType" Type="int" />
+    <Property Name="SenderId" Type="varchar" MaxLength="50" />
+    <Property Name="SenderName" Type="varchar" MaxLength="50" />
+    <Property Name="SenderTime" Type="datetime" Precision="0" />
+    <Property Name="IsHighlight" Type="int" />
+    <Property Name="SendPriority" Type="varchar" MaxLength="50" />
+    <Property Name="IsSmsReminder" Type="int" />
+    <Property Name="IsReceipt" Type="int" />
+    <Property Name="AddresssHtml" Type="longtext" />
+    <Property Name="CopysendHtml" Type="longtext" />
+    <Property Name="BccsendHtml" Type="longtext" />
+    <Property Name="SendState" Type="int" />
+    <Property Name="DeleteMark" Type="int" />
+    <Property Name="EnabledMark" Type="int" />
+    <Property Name="Description" Type="varchar" MaxLength="200" />
+    <Property Name="CreateDate" Type="datetime" Precision="0" />
+    <Property Name="CreateUserId" Type="varchar" MaxLength="50" />
+    <Property Name="CreateUserName" Type="varchar" MaxLength="50" />
+    <Property Name="ModifyDate" Type="datetime" Precision="0" />
+    <Property Name="ModifyUserId" Type="varchar" MaxLength="50" />
+    <Property Name="ModifyUserName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="errno">
+    <Key>
+      <PropertyRef Name="en_guid" />
+    </Key>
+    <Property Name="en_guid" Type="char" MaxLength="50" Nullable="false" />
+    <Property Name="en_errno" Type="int" Nullable="false" />
+    <Property Name="en_description" Type="char" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="exam_category">
+    <Key>
+      <PropertyRef Name="ec_guid" />
+    </Key>
+    <Property Name="ec_guid" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ec_organizeId" Type="varchar" MaxLength="50" />
+    <Property Name="ec_type" Type="varchar" MaxLength="50" />
+    <Property Name="ec_name" Type="varchar" MaxLength="50" />
+    <Property Name="ec_code" Type="varchar" MaxLength="50" />
+    <Property Name="ec_curlevelnumber" Type="int" Nullable="false" />
+    <Property Name="ec_elementids" Type="longtext" />
+  </EntityType>
+  <EntityType Name="im_content">
+    <Key>
+      <PropertyRef Name="ContentId" />
+    </Key>
+    <Property Name="ContentId" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="IsGroup" Type="int" />
+    <Property Name="SendId" Type="varchar" MaxLength="50" />
+    <Property Name="ToId" Type="varchar" MaxLength="50" />
+    <Property Name="MsgContent" Type="varchar" MaxLength="200" />
+    <Property Name="CreateDate" Type="datetime" Precision="0" />
+    <Property Name="CreateUserId" Type="varchar" MaxLength="50" />
+    <Property Name="CreateUserName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="im_group">
+    <Key>
+      <PropertyRef Name="GroupId" />
+    </Key>
+    <Property Name="GroupId" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="FullName" Type="varchar" MaxLength="200" />
+    <Property Name="CreateDate" Type="datetime" Precision="0" />
+    <Property Name="CreateUserId" Type="varchar" MaxLength="50" />
+    <Property Name="CreateUserName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="im_read">
+    <Key>
+      <PropertyRef Name="ReadId" />
+    </Key>
+    <Property Name="ReadId" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ContentId" Type="varchar" MaxLength="50" />
+    <Property Name="UserId" Type="varchar" MaxLength="50" />
+    <Property Name="SendId" Type="varchar" MaxLength="50" />
+    <Property Name="CreateDate" Type="datetime" Precision="0" />
+    <Property Name="CreateUserId" Type="varchar" MaxLength="50" />
+    <Property Name="CreateUserName" Type="varchar" MaxLength="50" />
+    <Property Name="ReadStatus" Type="int" />
+  </EntityType>
+  <EntityType Name="im_usergroup">
+    <Key>
+      <PropertyRef Name="UserGroupId" />
+    </Key>
+    <Property Name="UserGroupId" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="GroupId" Type="varchar" MaxLength="50" />
+    <Property Name="UserId" Type="varchar" MaxLength="50" />
+    <Property Name="CreateDate" Type="datetime" Precision="0" />
+    <Property Name="CreateUserId" Type="varchar" MaxLength="50" />
+    <Property Name="CreateUserName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <!--生成过程中发现错误:
+警告 6002: 表/视图“def.probim.ipwhite”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+  <EntityType Name="ipwhite">
+    <Key>
+      <PropertyRef Name="IPAddress" />
+    </Key>
+    <Property Name="IPAddress" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="IPName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="issue_status">
+    <Key>
+      <PropertyRef Name="is_guid" />
+    </Key>
+    <Property Name="is_guid" Type="guid" Nullable="false" />
+    <Property Name="is_sort" Type="int" Nullable="false" />
+    <Property Name="is_name" Type="varchar" MaxLength="45" />
+    <Property Name="is_desc" Type="varchar" MaxLength="2000" />
+  </EntityType>
+  <EntityType Name="issue_tag">
+    <Key>
+      <PropertyRef Name="it_guid" />
+    </Key>
+    <Property Name="it_guid" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="it_name" Type="varchar" MaxLength="50" />
+    <Property Name="it_color" Type="varchar" MaxLength="50" />
+    <Property Name="it_organizeId" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="issue_type">
+    <Key>
+      <PropertyRef Name="it_guid" />
+    </Key>
+    <Property Name="it_guid" Type="guid" Nullable="false" />
+    <Property Name="it_name" Type="char" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="msg_msg">
+    <Key>
+      <PropertyRef Name="mm_guid" />
+    </Key>
+    <Property Name="mm_guid" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="mm_tritype" Type="varchar" MaxLength="50" />
+    <Property Name="mm_triobjtype" Type="varchar" MaxLength="50" />
+    <Property Name="mm_objid" Type="varchar" MaxLength="50" />
+    <Property Name="mm_objname" Type="varchar" MaxLength="255" />
+    <Property Name="mm_author" Type="varchar" MaxLength="50" />
+    <Property Name="mm_type" Type="varchar" MaxLength="45" />
+    <Property Name="mm_authorrealname" Type="varchar" MaxLength="255" />
+    <Property Name="mm_triobjobjtype" Type="varchar" MaxLength="50" />
+    <Property Name="mm_createdatetime" Type="varchar" MaxLength="45" />
+    <Property Name="mm_organizeid" Type="varchar" MaxLength="45" />
+  </EntityType>
+  <EntityType Name="msg_msgext">
+    <Key>
+      <PropertyRef Name="mme_guid" />
+    </Key>
+    <Property Name="mme_guid" Type="guid" Nullable="false" />
+    <Property Name="mm_guid" Type="guid" />
+    <Property Name="mme_extdata" Type="varchar" MaxLength="256" />
+    <Property Name="mme_iLogAndMsgType" Type="int" />
+    <Property Name="mme_ProjectID" Type="varchar" MaxLength="45" />
+  </EntityType>
+  <EntityType Name="msg_user">
+    <Key>
+      <PropertyRef Name="mu_guid" />
+    </Key>
+    <Property Name="mu_guid" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="mm_guid" Type="varchar" MaxLength="50" />
+    <Property Name="userId" Type="varchar" MaxLength="50" />
+    <Property Name="mu_hasread" Type="varchar" MaxLength="50" />
+    <Property Name="mu_hasalert" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="mtr_outerpage">
+    <Key>
+      <PropertyRef Name="mop_guid" />
+    </Key>
+    <Property Name="mop_guid" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="mop_itemguid" Type="varchar" MaxLength="50" />
+    <Property Name="mop_url" Type="longtext" />
+  </EntityType>
+  <EntityType Name="oper_log">
+    <Key>
+      <PropertyRef Name="ol_guid" />
+    </Key>
+    <Property Name="ol_guid" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ol_objId" Type="varchar" MaxLength="50" />
+    <Property Name="ol_datetime" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="ol_operId" Type="varchar" MaxLength="50" />
+    <Property Name="ol_content" Type="varchar" MaxLength="128" />
+    <Property Name="ol_type" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="org_userorganize">
+    <Key>
+      <PropertyRef Name="ouoId" />
+    </Key>
+    <Property Name="ouoId" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ouoUserId" Type="varchar" MaxLength="50" />
+    <Property Name="ouoOrganizeId" Type="varchar" MaxLength="50" />
+    <Property Name="ouoUserProjectCount" Type="int" />
+    <Property Name="ouoUserProjectsCreated" Type="int" />
+  </EntityType>
+  <EntityType Name="panorama_base">
+    <Key>
+      <PropertyRef Name="pb_guid" />
+    </Key>
+    <Property Name="pb_guid" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="pb_url" Type="varchar" MaxLength="255" />
+    <Property Name="pb_name" Type="varchar" MaxLength="255" />
+    <Property Name="pb_updatetime" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="pb_organizeId" Type="varchar" MaxLength="50" />
+    <Property Name="pb_isdel" Type="int" Nullable="false" />
+    <Property Name="pb_gisinfo" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="panorama_pointinfo">
+    <Key>
+      <PropertyRef Name="pp_guid" />
+    </Key>
+    <Property Name="pp_guid" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="pbguid" Type="varchar" MaxLength="50" />
+    <Property Name="pp_scene" Type="varchar" MaxLength="255" />
+    <Property Name="pp_posv2" Type="varchar" MaxLength="255" />
+    <Property Name="pp_name" Type="varchar" MaxLength="255" />
+    <Property Name="pp_pos" Type="varchar" MaxLength="255" />
+    <Property Name="pp_hotspot" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="plus_project">
+    <Key>
+      <PropertyRef Name="UID_" />
+    </Key>
+    <Property Name="UID_" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="NAME_" Type="varchar" MaxLength="150" />
+    <Property Name="STARTDATE_" Type="datetime" Precision="0" />
+    <Property Name="FINISHDATE_" Type="datetime" Precision="0" />
+    <Property Name="LASTSAVED_" Type="varchar" MaxLength="20" />
+    <Property Name="CALENDARUID_" Type="varchar" MaxLength="50" />
+    <Property Name="CALENDARS_" Type="text" />
+  </EntityType>
+  <EntityType Name="plus_resource">
+    <Key>
+      <PropertyRef Name="UID_" />
+    </Key>
+    <Property Name="UID_" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="NAME_" Type="varchar" MaxLength="200" />
+    <Property Name="TYPE_" Type="int" />
+    <Property Name="MAXUNITS_" Type="int" />
+    <Property Name="WORK_" Type="int" />
+    <Property Name="PROJECTUID_" Type="varchar" MaxLength="50" />
+    <Property Name="COST_" Type="double" />
+  </EntityType>
+  <!--生成过程中发现错误:
+警告 6002: 表/视图“def.probim.plus_task”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+  <EntityType Name="plus_task">
+    <Key>
+      <PropertyRef Name="UID_" />
+    </Key>
+    <Property Name="UID_" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ID_" Type="int" />
+    <Property Name="NAME_" Type="varchar" MaxLength="200" />
+    <Property Name="START_" Type="datetime" Precision="0" />
+    <Property Name="FINISH_" Type="datetime" Precision="0" />
+    <Property Name="DURATION_" Type="int" />
+    <Property Name="WORK_" Type="int" />
+    <Property Name="PERCENTCOMPLETE_" Type="int" />
+    <Property Name="MANUAL_" Type="int" />
+    <Property Name="WEIGHT_" Type="int" />
+    <Property Name="CONSTRAINTTYPE_" Type="int" />
+    <Property Name="CONSTRAINTDATE_" Type="datetime" Precision="0" />
+    <Property Name="MILESTONE_" Type="int" />
+    <Property Name="SUMMARY_" Type="int" />
+    <Property Name="CRITICAL_" Type="int" />
+    <Property Name="PRIORITY_" Type="int" />
+    <Property Name="NOTES_" Type="text" />
+    <Property Name="DEPARTMENT_" Type="varchar" MaxLength="50" />
+    <Property Name="PRINCIPAL_" Type="varchar" MaxLength="500" />
+    <Property Name="PREDECESSORLINK_" Type="text" />
+    <Property Name="FIXEDDATE_" Type="int" />
+    <Property Name="PARENTTASKUID_" Type="varchar" MaxLength="50" />
+    <Property Name="PROJECTUID_" Type="varchar" MaxLength="50" />
+    <Property Name="ACTUALSTART_" Type="datetime" Precision="0" />
+    <Property Name="ACTUALFINISH_" Type="datetime" Precision="0" />
+    <Property Name="ACTUALDURATION_" Type="int" />
+    <Property Name="ASSIGNMENTS_" Type="text" />
+    <Property Name="WBS_" Type="varchar" MaxLength="200" />
+    <Property Name="CRITICAL2_" Type="int" />
+  </EntityType>
+  <!--生成过程中发现错误:
+警告 6002: 表/视图“def.probim.plus_task_originbak”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+  <EntityType Name="plus_task_originbak">
+    <Key>
+      <PropertyRef Name="UID_" />
+      <PropertyRef Name="PARENTTASKUID_" />
+    </Key>
+    <Property Name="UID_" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ID_" Type="int" />
+    <Property Name="NAME_" Type="varchar" MaxLength="200" />
+    <Property Name="START_" Type="datetime" Precision="0" />
+    <Property Name="FINISH_" Type="datetime" Precision="0" />
+    <Property Name="DURATION_" Type="int" />
+    <Property Name="WORK_" Type="int" />
+    <Property Name="PERCENTCOMPLETE_" Type="int" />
+    <Property Name="MANUAL_" Type="int" />
+    <Property Name="WEIGHT_" Type="int" />
+    <Property Name="CONSTRAINTTYPE_" Type="int" />
+    <Property Name="CONSTRAINTDATE_" Type="datetime" Precision="0" />
+    <Property Name="MILESTONE_" Type="int" />
+    <Property Name="SUMMARY_" Type="int" />
+    <Property Name="CRITICAL_" Type="int" />
+    <Property Name="PRIORITY_" Type="int" />
+    <Property Name="NOTES_" Type="varchar" MaxLength="10000" />
+    <Property Name="DEPARTMENT_" Type="varchar" MaxLength="50" />
+    <Property Name="PRINCIPAL_" Type="varchar" MaxLength="500" />
+    <Property Name="PREDECESSORLINK_" Type="varchar" MaxLength="10000" />
+    <Property Name="FIXEDDATE_" Type="int" />
+    <Property Name="PARENTTASKUID_" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="PROJECTUID_" Type="varchar" MaxLength="50" />
+    <Property Name="ACTUALSTART_" Type="datetime" Precision="0" />
+    <Property Name="ACTUALFINISH_" Type="datetime" Precision="0" />
+    <Property Name="ACTUALDURATION_" Type="int" />
+    <Property Name="ASSIGNMENTS_" Type="varchar" MaxLength="5000" />
+    <Property Name="WBS_" Type="varchar" MaxLength="200" />
+    <Property Name="CRITICAL2_" Type="int" />
+  </EntityType>
+  <EntityType Name="plus_task3">
+    <Key>
+      <PropertyRef Name="UID_" />
+    </Key>
+    <Property Name="UID_" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ID_" Type="int" />
+    <Property Name="NAME_" Type="varchar" MaxLength="200" />
+    <Property Name="START_" Type="datetime" Precision="0" />
+    <Property Name="FINISH_" Type="datetime" Precision="0" />
+    <Property Name="DURATION_" Type="int" />
+    <Property Name="WORK_" Type="int" />
+    <Property Name="PERCENTCOMPLETE_" Type="int" />
+    <Property Name="MANUAL_" Type="int" />
+    <Property Name="WEIGHT_" Type="int" />
+    <Property Name="CONSTRAINTTYPE_" Type="int" />
+    <Property Name="CONSTRAINTDATE_" Type="datetime" Precision="0" />
+    <Property Name="MILESTONE_" Type="int" />
+    <Property Name="SUMMARY_" Type="int" />
+    <Property Name="CRITICAL_" Type="int" />
+    <Property Name="PRIORITY_" Type="int" />
+    <Property Name="NOTES_" Type="varchar" MaxLength="10000" />
+    <Property Name="DEPARTMENT_" Type="varchar" MaxLength="50" />
+    <Property Name="PRINCIPAL_" Type="varchar" MaxLength="500" />
+    <Property Name="PREDECESSORLINK_" Type="varchar" MaxLength="10000" />
+    <Property Name="FIXEDDATE_" Type="int" />
+    <Property Name="PARENTTASKUID_" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="PROJECTUID_" Type="varchar" MaxLength="50" />
+    <Property Name="ACTUALSTART_" Type="datetime" Precision="0" />
+    <Property Name="ACTUALFINISH_" Type="datetime" Precision="0" />
+    <Property Name="ACTUALDURATION_" Type="int" />
+    <Property Name="ASSIGNMENTS_" Type="varchar" MaxLength="5000" />
+    <Property Name="WBS_" Type="varchar" MaxLength="200" />
+    <Property Name="CRITICAL2_" Type="int" />
+  </EntityType>
+  <EntityType Name="plusrel_taskelements">
+    <Key>
+      <PropertyRef Name="pte_guid" />
+    </Key>
+    <Property Name="pte_guid" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="pte_planid" Type="varchar" MaxLength="50" />
+    <Property Name="pte_taskid" Type="varchar" MaxLength="50" />
+    <Property Name="pte_elementids" Type="longtext" />
+    <Property Name="pte_createtime" Type="datetime" Precision="0" />
+    <Property Name="pte_updatetime" Type="datetime" Precision="0" />
+  </EntityType>
+  <EntityType Name="rel_issue_issueuser">
+    <Key>
+      <PropertyRef Name="riiu_guid" />
+    </Key>
+    <Property Name="riiu_guid" Type="guid" Nullable="false" />
+    <Property Name="riiu_issueid" Type="guid" Nullable="false" />
+    <Property Name="riiu_userid" Type="guid" Nullable="false" />
+    <Property Name="riiu_reltype" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="rel_issue_tag">
+    <Key>
+      <PropertyRef Name="rit_guid" />
+    </Key>
+    <Property Name="rit_guid" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="rit_issueid" Type="varchar" MaxLength="50" />
+    <Property Name="rit_tagIds" Type="longtext" />
+  </EntityType>
+  <EntityType Name="rpt_temp">
+    <Key>
+      <PropertyRef Name="TempId" />
+    </Key>
+    <Property Name="TempId" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="FullName" Type="varchar" MaxLength="200" />
+    <Property Name="EnCode" Type="varchar" MaxLength="50" />
+    <Property Name="TempType" Type="varchar" MaxLength="50" />
+    <Property Name="Description" Type="varchar" MaxLength="200" />
+    <Property Name="ParamJson" Type="varchar" MaxLength="5000" />
+    <Property Name="SortCode" Type="int" />
+    <Property Name="DeleteMark" Type="int" />
+    <Property Name="EnabledMark" Type="int" />
+    <Property Name="CreateDate" Type="datetime" Precision="0" />
+    <Property Name="CreateUserId" Type="varchar" MaxLength="50" />
+    <Property Name="CreateUserName" Type="varchar" MaxLength="50" />
+    <Property Name="ModifyDate" Type="datetime" Precision="0" />
+    <Property Name="ModifyUserId" Type="varchar" MaxLength="50" />
+    <Property Name="ModifyUserName" Type="varchar" MaxLength="50" />
+    <Property Name="TempCategory" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <!--生成过程中发现错误:
+警告 6002: 表/视图“def.probim.share_doc”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+  <EntityType Name="share_doc">
+    <Key>
+      <PropertyRef Name="shd_Guid" />
+      <PropertyRef Name="shd_SessionId" />
+      <PropertyRef Name="shd_BIMComposerId" />
+      <PropertyRef Name="shd_DocIds" />
+    </Key>
+    <Property Name="shd_Guid" Type="varchar" MaxLength="36" Nullable="false" />
+    <Property Name="shd_SessionId" Type="varchar" MaxLength="36" Nullable="false" />
+    <Property Name="shd_BIMComposerId" Type="varchar" MaxLength="20000" Nullable="false" />
+    <Property Name="shd_DocIds" Type="longtext" Nullable="false" />
+    <Property Name="shd_Privilege" Type="varchar" MaxLength="300" />
+    <Property Name="shd_CreateDate" Type="datetime" Precision="0" />
+    <Property Name="shd_EndTime" Type="int" />
+    <Property Name="shd_HasPwd" Type="int" />
+    <Property Name="shd_Pwd" Type="varchar" MaxLength="128" />
+    <Property Name="CreateUserId" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="shared_model">
+    <Key>
+      <PropertyRef Name="shm_guid" />
+    </Key>
+    <Property Name="shm_guid" Type="guid" Nullable="false" />
+    <Property Name="shm_sessionId" Type="guid" />
+    <Property Name="shm_projectid" Type="guid" />
+    <Property Name="shm_modelid" Type="guid" />
+    <Property Name="shm_json" Type="longtext" />
+    <Property Name="shm_createdate" Type="datetime" Precision="0" />
+    <Property Name="shm_pwd" Type="char" MaxLength="128" />
+    <Property Name="shm_haspwd" Type="bit" />
+    <Property Name="shm_modelversion" Type="varchar" MaxLength="50" />
+    <Property Name="shm_createUserId" Type="varchar" MaxLength="50" />
+    <Property Name="shm_originpwd" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="sync_materialarrange">
+    <Key>
+      <PropertyRef Name="sma_guid" />
+    </Key>
+    <Property Name="sma_guid" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="sma_path" Type="varchar" MaxLength="255" />
+    <Property Name="sma_hadarrange" Type="int" />
+    <Property Name="sma_uploadtime" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="sma_organizeId" Type="varchar" MaxLength="50" />
+    <Property Name="sma_bcguid" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <!--生成过程中发现错误:
+警告 6002: 表/视图“def.probim.sysloginlog”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+  <EntityType Name="sysloginlog">
+    <Key>
+      <PropertyRef Name="SysLoginLogId" />
+    </Key>
+    <Property Name="SysLoginLogId" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CreateDate" Type="datetime" Precision="0" />
+    <Property Name="Account" Type="varchar" MaxLength="50" />
+    <Property Name="Status" Type="varchar" MaxLength="50" />
+    <Property Name="IPAddress" Type="varchar" MaxLength="50" />
+    <Property Name="IPAddressName" Type="varchar" MaxLength="200" />
+    <Property Name="NickName" Type="varchar" MaxLength="50" />
+    <Property Name="Sex" Type="varchar" MaxLength="50" />
+    <Property Name="Openid" Type="varchar" MaxLength="50" />
+    <Property Name="NowStatus" Type="int" />
+    <Property Name="Platform" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="wechat_app">
+    <Key>
+      <PropertyRef Name="AppId" />
+    </Key>
+    <Property Name="AppId" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="AppLogo" Type="varchar" MaxLength="200" />
+    <Property Name="AppName" Type="varchar" MaxLength="50" />
+    <Property Name="AppType" Type="int" />
+    <Property Name="Description" Type="varchar" MaxLength="200" />
+    <Property Name="AppUrl" Type="varchar" MaxLength="200" />
+    <Property Name="RedirectDomain" Type="varchar" MaxLength="200" />
+    <Property Name="MenuJson" Type="varchar" MaxLength="5000" />
+    <Property Name="IsReportUser" Type="int" />
+    <Property Name="IsReportenter" Type="int" />
+    <Property Name="DeleteMark" Type="int" />
+    <Property Name="EnabledMark" Type="int" />
+    <Property Name="CreateDate" Type="datetime" Precision="0" />
+    <Property Name="CreateUserId" Type="varchar" MaxLength="50" />
+    <Property Name="CreateUserName" Type="varchar" MaxLength="50" />
+    <Property Name="ModifyDate" Type="datetime" Precision="0" />
+    <Property Name="ModifyUserId" Type="varchar" MaxLength="50" />
+    <Property Name="ModifyUserName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="wechat_deptrelation">
+    <Key>
+      <PropertyRef Name="DeptRelationId" />
+    </Key>
+    <Property Name="DeptRelationId" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="DeptId" Type="varchar" MaxLength="50" />
+    <Property Name="DeptName" Type="varchar" MaxLength="50" />
+    <Property Name="WeChatDeptId" Type="int" />
+    <Property Name="CreateDate" Type="datetime" Precision="0" />
+    <Property Name="CreateUserId" Type="varchar" MaxLength="50" />
+    <Property Name="CreateUserName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="wechat_userrelation">
+    <Key>
+      <PropertyRef Name="UserRelationId" />
+    </Key>
+    <Property Name="UserRelationId" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="DeptId" Type="varchar" MaxLength="50" />
+    <Property Name="DeptName" Type="varchar" MaxLength="50" />
+    <Property Name="WeChatDeptId" Type="int" />
+    <Property Name="UserId" Type="varchar" MaxLength="50" />
+    <Property Name="SyncState" Type="varchar" MaxLength="50" />
+    <Property Name="SyncLog" Type="varchar" MaxLength="200" />
+    <Property Name="CreateDate" Type="datetime" Precision="0" />
+    <Property Name="CreateUserId" Type="varchar" MaxLength="50" />
+    <Property Name="CreateUserName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="wf_delegaterecord">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="WFDelegateRuleId" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="FromUserId" Type="varchar" MaxLength="50" />
+    <Property Name="FromUserName" Type="varchar" MaxLength="50" />
+    <Property Name="ToUserId" Type="varchar" MaxLength="50" />
+    <Property Name="ToUserName" Type="varchar" MaxLength="50" />
+    <Property Name="CreateDate" Type="datetime" Precision="0" />
+    <Property Name="ProcessId" Type="varchar" MaxLength="50" />
+    <Property Name="ProcessCode" Type="varchar" MaxLength="200" />
+    <Property Name="ProcessName" Type="varchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="wf_delegaterule">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ToUserId" Type="varchar" MaxLength="50" />
+    <Property Name="ToUserName" Type="varchar" MaxLength="50" />
+    <Property Name="BeginDate" Type="datetime" Precision="0" />
+    <Property Name="EndDate" Type="datetime" Precision="0" />
+    <Property Name="CreateUserId" Type="varchar" MaxLength="50" />
+    <Property Name="CreateUserName" Type="varchar" MaxLength="50" />
+    <Property Name="CreateDate" Type="datetime" Precision="0" />
+    <Property Name="EnabledMark" Type="int" />
+    <Property Name="Description" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="wf_delegateruleschemeinfo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="DelegateRuleId" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="SchemeInfoId" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="wf_fieldcfg">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="FrmMainId" Type="varchar" MaxLength="50" />
+    <Property Name="Name" Type="varchar" MaxLength="50" />
+    <Property Name="NodeId" Type="varchar" MaxLength="50" />
+    <Property Name="AuthJson" Type="varchar" MaxLength="50" />
+    <Property Name="sc_id" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="wf_flowinstance">
+    <Key>
+      <PropertyRef Name="WFI_Id" />
+    </Key>
+    <Property Name="WFI_Id" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="SC_Id" Type="varchar" MaxLength="50" />
+    <Property Name="WFI_Title" Type="varchar" MaxLength="255" />
+    <Property Name="WFI_CreateUser" Type="varchar" MaxLength="50" />
+    <Property Name="WFI_CreateTime" Type="datetime" Precision="0" />
+    <Property Name="WFI_ActiveNodeIds" Type="text" />
+    <Property Name="WFI_Status" Type="int" />
+    <Property Name="WFI_UpdateTime" Type="datetime" Precision="0" />
+    <Property Name="WFI_NextOperators" Type="text" />
+    <Property Name="WFI_AllOperators" Type="text" />
+    <Property Name="WFI_UniqueId" Type="varchar" MaxLength="50" />
+    <Property Name="WFI_Nexts" Type="longtext" />
+    <Property Name="WFI_FormData" Type="longtext" />
+  </EntityType>
+  <EntityType Name="wf_flowinstanceactive">
+    <Key>
+      <PropertyRef Name="wfia_id" />
+    </Key>
+    <Property Name="wfia_id" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="WFI_Id" Type="varchar" MaxLength="50" />
+    <Property Name="wfia_nodeid" Type="varchar" MaxLength="50" />
+    <Property Name="wfia_nextoperators" Type="longtext" />
+  </EntityType>
+  <EntityType Name="wf_flowrecord">
+    <Key>
+      <PropertyRef Name="WFR_ID" />
+    </Key>
+    <Property Name="WFR_ID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="WFI_Id" Type="varchar" MaxLength="50" />
+    <Property Name="WFR_PNodeId" Type="varchar" MaxLength="50" />
+    <Property Name="WFR_CNodeId" Type="varchar" MaxLength="50" />
+    <Property Name="WFR_Createtime" Type="datetime" Precision="0" />
+    <Property Name="WFR_Operator" Type="varchar" MaxLength="50" />
+    <Property Name="WFR_OperateResult" Type="varchar" MaxLength="50" />
+    <Property Name="WFR_Comments" Type="longtext" />
+    <Property Name="WFR_FormData" Type="longtext" />
+  </EntityType>
+  <EntityType Name="wf_frmmain">
+    <Key>
+      <PropertyRef Name="FrmMainId" />
+    </Key>
+    <Property Name="FrmMainId" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="FrmCode" Type="varchar" MaxLength="50" />
+    <Property Name="FrmName" Type="varchar" MaxLength="200" />
+    <Property Name="FrmType" Type="varchar" MaxLength="50" />
+    <Property Name="FrmDbId" Type="varchar" MaxLength="50" />
+    <Property Name="FrmTable" Type="text" />
+    <Property Name="IsSystemTable" Type="int" />
+    <Property Name="FrmTableId" Type="varchar" MaxLength="50" />
+    <Property Name="FrmContent" Type="longtext" />
+    <Property Name="SortCode" Type="int" />
+    <Property Name="DeleteMark" Type="int" />
+    <Property Name="EnabledMark" Type="int" />
+    <Property Name="Description" Type="varchar" MaxLength="200" />
+    <Property Name="CreateDate" Type="datetime" Precision="0" />
+    <Property Name="CreateUserId" Type="varchar" MaxLength="50" />
+    <Property Name="CreateUserName" Type="varchar" MaxLength="50" />
+    <Property Name="ModifyDate" Type="datetime" Precision="0" />
+    <Property Name="ModifyUserId" Type="varchar" MaxLength="50" />
+    <Property Name="ModifyUserName" Type="varchar" MaxLength="50" />
+    <Property Name="FrmExtrajson" Type="longtext" />
+  </EntityType>
+  <EntityType Name="wf_linebtns">
+    <Key>
+      <PropertyRef Name="wlb_id" />
+    </Key>
+    <Property Name="wlb_id" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="wlb_scid" Type="varchar" MaxLength="50" />
+    <Property Name="wlb_lineid" Type="varchar" MaxLength="50" />
+    <Property Name="wlb_btnname" Type="varchar" MaxLength="50" />
+    <Property Name="wlb_linetype" Type="int" />
+    <Property Name="wlb_lineobj" Type="longtext" />
+  </EntityType>
+  <EntityType Name="wf_nodedatas">
+    <Key>
+      <PropertyRef Name="wnd_id" />
+    </Key>
+    <Property Name="wnd_id" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="wnd_scid" Type="varchar" MaxLength="50" />
+    <Property Name="wnd_nodeid" Type="varchar" MaxLength="50" />
+    <Property Name="wnd_json" Type="longtext" />
+  </EntityType>
+  <EntityType Name="wf_processinstance">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Code" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="CustomName" Type="varchar" MaxLength="200" />
+    <Property Name="ActivityId" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ActivityType" Type="int" Nullable="false" />
+    <Property Name="ActivityName" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="PreviousId" Type="varchar" MaxLength="50" />
+    <Property Name="ProcessSchemeId" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="SchemeType" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="FrmType" Type="int" />
+    <Property Name="EnabledMark" Type="int" Nullable="false" />
+    <Property Name="CreateDate" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="CreateUserId" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CreateUserName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Level" Type="int" />
+    <Property Name="Description" Type="varchar" MaxLength="200" />
+    <Property Name="IsFinish" Type="int" />
+    <Property Name="MakerList" Type="varchar" MaxLength="1000" />
+    <Property Name="BIMComposerID" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="wf_processoperationhistory">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ProcessId" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Content" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="CreateDate" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="CreateUserId" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CreateUserName" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="wf_processscheme">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="SchemeContent" Type="text" />
+    <Property Name="WFSchemeInfoId" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="SchemeVersion" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ProcessType" Type="int" Nullable="false" />
+    <Property Name="ModelID" Type="varchar" MaxLength="50" />
+    <Property Name="ViewpointID" Type="varchar" MaxLength="50" />
+    <Property Name="ElementID" Type="varchar" MaxLength="50" />
+    <Property Name="SpaceID" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="wf_processtransitionhistory">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ProcessId" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="FromNodeId" Type="varchar" MaxLength="1024" />
+    <Property Name="FromNodeType" Type="int" />
+    <Property Name="FromNodeName" Type="varchar" MaxLength="200" />
+    <Property Name="ToNodeId" Type="varchar" MaxLength="50" />
+    <Property Name="ToNodeType" Type="int" />
+    <Property Name="ToNodeName" Type="varchar" MaxLength="200" />
+    <Property Name="TransitionSate" Type="int" Nullable="false" />
+    <Property Name="IsFinish" Type="int" />
+    <Property Name="CreateDate" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="CreateUserId" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CreateUserName" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="wf_projectschemerelation">
+    <Key>
+      <PropertyRef Name="RelationId" />
+    </Key>
+    <Property Name="RelationId" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="BIMComposerID" Type="varchar" MaxLength="50" />
+    <Property Name="SchemeInfoId" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="wf_schemecontent">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="WFSchemeInfoId" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="SchemeVersion" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="SchemeContent" Type="text" />
+    <Property Name="CreateDate" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="CreateUserId" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CreateUserName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="WFC_ShuntPairs" Type="longtext" />
+  </EntityType>
+  <EntityType Name="wf_schemeinfo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="SchemeCode" Type="varchar" MaxLength="50" />
+    <Property Name="SchemeName" Type="varchar" MaxLength="200" />
+    <Property Name="SchemeType" Type="varchar" MaxLength="50" />
+    <Property Name="SchemeVersion" Type="varchar" MaxLength="50" />
+    <Property Name="SchemeCanUser" Type="varchar" MaxLength="2048" />
+    <Property Name="FrmType" Type="int" />
+    <Property Name="AuthorizeType" Type="int" />
+    <Property Name="SortCode" Type="int" />
+    <Property Name="DeleteMark" Type="int" Nullable="false" />
+    <Property Name="EnabledMark" Type="int" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="200" />
+    <Property Name="CreateDate" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="CreateUserId" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CreateUserName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ModifyDate" Type="datetime" Precision="0" />
+    <Property Name="ModifyUserId" Type="varchar" MaxLength="50" />
+    <Property Name="ModifyUserName" Type="varchar" MaxLength="50" />
+    <Property Name="SchemeTemplateType" Type="varchar" MaxLength="10" />
+    <Property Name="DependentCategory" Type="varchar" MaxLength="10" />
+    <Property Name="TemplateId" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="wf_schemeinfoauthorize">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="SchemeInfoId" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ObjectId" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="probimModelStoreContainer">
+    <EntitySet Name="account" EntityType="Self.account" Schema="probim" store:Type="Tables" />
+    <EntitySet Name="api_drawposinfo" EntityType="Self.api_drawposinfo" Schema="probim" store:Type="Tables" />
+    <EntitySet Name="api_examineattachment" EntityType="Self.api_examineattachment" Schema="probim" store:Type="Tables" />
+    <EntitySet Name="api_examinedata" EntityType="Self.api_examinedata" Schema="probim" store:Type="Tables" />
+    <EntitySet Name="api_examinedataextend" EntityType="Self.api_examinedataextend" Schema="probim" store:Type="Tables" />
+    <EntitySet Name="api_examinedatatype" EntityType="Self.api_examinedatatype" Schema="probim" store:Type="Tables" />
+    <EntitySet Name="api2_invite" EntityType="Self.api2_invite" Schema="probim" store:Type="Tables" />
+    <EntitySet Name="api2_recycles" EntityType="Self.api2_recycles" Schema="probim" store:Type="Tables" />
+    <EntitySet Name="api2_session" EntityType="Self.api2_session" Schema="probim" store:Type="Tables" />
+    <EntitySet Name="api2_suscribe" EntityType="Self.api2_suscribe" Schema="probim" store:Type="Tables" />
+    <EntitySet Name="api2_validcode" EntityType="Self.api2_validcode" Schema="probim" store:Type="Tables" />
+    <EntitySet Name="auth_rolephase" EntityType="Self.auth_rolephase" Schema="probim" store:Type="Tables" />
+    <EntitySet Name="base_area" EntityType="Self.base_area" Schema="probim" store:Type="Tables" />
+    <EntitySet Name="base_authorize" EntityType="Self.base_authorize" Schema="probim" store:Type="Tables" />
+    <EntitySet Name="base_authorizedata" EntityType="Self.base_authorizedata" Schema="probim" store:Type="Tables" />
+    <EntitySet Name="base_category" EntityType="Self.base_category" Schema="probim" store:Type="Tables" />
+    <EntitySet Name="base_coderule" EntityType="Self.base_coderule" Schema="probim" store:Type="Tables" />
+    <EntitySet Name="base_coderuleseed" EntityType="Self.base_coderuleseed" Schema="probim" store:Type="Tables" />
+    <EntitySet Name="base_companydata" EntityType="Self.base_companydata" Schema="probim" store:Type="Tables" />
+    <EntitySet Name="base_databasebackup" EntityType="Self.base_databasebackup" Schema="probim" store:Type="Tables" />
+    <EntitySet Name="base_databaselink" EntityType="Self.base_databaselink" Schema="probim" store:Type="Tables" />
+    <EntitySet Name="base_dataitem" EntityType="Self.base_dataitem" Schema="probim" store:Type="Tables" />
+    <EntitySet Name="base_dataitemdetail" EntityType="Self.base_dataitemdetail" Schema="probim" store:Type="Tables" />
+    <EntitySet Name="base_department" EntityType="Self.base_department" Schema="probim" store:Type="Tables" />
+    <EntitySet Name="base_file" EntityType="Self.base_file" Schema="probim" store:Type="Tables" />
+    <EntitySet Name="base_filefolder" EntityType="Self.base_filefolder" Schema="probim" store:Type="Tables" />
+    <EntitySet Name="base_fileinfo" EntityType="Self.base_fileinfo" Schema="probim" store:Type="Tables" />
+    <EntitySet Name="base_fileinfo_version" EntityType="Self.base_fileinfo_version" Schema="probim" store:Type="Tables" />
+    <EntitySet Name="base_filterip" EntityType="Self.base_filterip" Schema="probim" store:Type="Tables" />
+    <EntitySet Name="base_filtertime" EntityType="Self.base_filtertime" Schema="probim" store:Type="Tables" />
+    <EntitySet Name="base_issue" EntityType="Self.base_issue" Schema="probim" store:Type="Tables" />
+    <EntitySet Name="base_issue_talk" EntityType="Self.base_issue_talk" Schema="probim" store:Type="Tables" />
+    <EntitySet Name="base_issue_user" EntityType="Self.base_issue_user" Schema="probim" store:Type="Tables" />
+    <EntitySet Name="base_issuenewrelation" EntityType="Self.base_issuenewrelation" Schema="probim" store:Type="Tables" />
+    <EntitySet Name="base_log" EntityType="Self.base_log" Schema="probim" store:Type="Tables" />
+    <EntitySet Name="base_logext" EntityType="Self.base_logext" Schema="probim" store:Type="Tables" />
+    <EntitySet Name="base_material" EntityType="Self.base_material" Schema="probim" store:Type="Tables" />
+    <EntitySet Name="base_materialelements" EntityType="Self.base_materialelements" Schema="probim" store:Type="Tables" />
+    <EntitySet Name="base_materialrecord" EntityType="Self.base_materialrecord" Schema="probim" store:Type="Tables" />
+    <EntitySet Name="base_messagequeue" EntityType="Self.base_messagequeue" Schema="probim" store:Type="Tables" />
+    <EntitySet Name="base_module" EntityType="Self.base_module" Schema="probim" store:Type="Tables" />
+    <EntitySet Name="base_modulebutton" EntityType="Self.base_modulebutton" Schema="probim" store:Type="Tables" />
+    <EntitySet Name="base_modulecolumn" EntityType="Self.base_modulecolumn" Schema="probim" store:Type="Tables" />
+    <EntitySet Name="base_moduleform" EntityType="Self.base_moduleform" Schema="probim" store:Type="Tables" />
+    <EntitySet Name="base_moduleforminstance" EntityType="Self.base_moduleforminstance" Schema="probim" store:Type="Tables" />
+    <EntitySet Name="base_newlog" EntityType="Self.base_newlog" Schema="probim" store:Type="Tables" />
+    <EntitySet Name="base_news" EntityType="Self.base_news" Schema="probim" store:Type="Tables" />
+    <EntitySet Name="base_organize" EntityType="Self.base_organize" Schema="probim" store:Type="Tables" />
+    <EntitySet Name="base_organizedetail" EntityType="Self.base_organizedetail" Schema="probim" store:Type="Tables" />
+    <EntitySet Name="base_organizeextend" EntityType="Self.base_organizeextend" Schema="probim" store:Type="Tables" />
+    <EntitySet Name="base_organizegis" EntityType="Self.base_organizegis" Schema="probim" store:Type="Tables" />
+    <EntitySet Name="base_organizeplus" EntityType="Self.base_organizeplus" Schema="probim" store:Type="Tables" />
+    <EntitySet Name="base_orgimg" EntityType="Self.base_orgimg" Schema="probim" store:Type="Tables" />
+    <EntitySet Name="base_projectnews" EntityType="Self.base_projectnews" Schema="probim" store:Type="Tables" />
+    <EntitySet Name="base_projectscore" EntityType="Self.base_projectscore" Schema="probim" store:Type="Tables" />
+    <EntitySet Name="base_projecttemplate" EntityType="Self.base_projecttemplate" Schema="probim" store:Type="Tables" />
+    <EntitySet Name="base_publicextend" EntityType="Self.base_publicextend" Schema="probim" store:Type="Tables" />
+    <EntitySet Name="base_relation" EntityType="Self.base_relation" Schema="probim" store:Type="Tables" />
+    <EntitySet Name="base_role" EntityType="Self.base_role" Schema="probim" store:Type="Tables" />
+    <EntitySet Name="base_schedule" EntityType="Self.base_schedule" Schema="probim" store:Type="Tables" />
+    <EntitySet Name="base_schedule_attachment" EntityType="Self.base_schedule_attachment" Schema="probim" store:Type="Tables" />
+    <EntitySet Name="base_schedule_participant" EntityType="Self.base_schedule_participant" Schema="probim" store:Type="Tables" />
+    <EntitySet Name="base_specialpw" EntityType="Self.base_specialpw" Schema="probim" store:Type="Tables" />
+    <EntitySet Name="base_template_folder" EntityType="Self.base_template_folder" Schema="probim" store:Type="Tables" />
+    <EntitySet Name="base_user" EntityType="Self.base_user" Schema="probim" store:Type="Tables" />
+    <EntitySet Name="base_userext" EntityType="Self.base_userext" Schema="probim" store:Type="Tables" />
+    <EntitySet Name="base_userrelation" EntityType="Self.base_userrelation" Schema="probim" store:Type="Tables" />
+    <EntitySet Name="base_usertag" EntityType="Self.base_usertag" Schema="probim" store:Type="Tables" />
+    <EntitySet Name="bimcomp_attach" EntityType="Self.bimcomp_attach" Schema="probim" store:Type="Tables" />
+    <EntitySet Name="bimcomp_category" EntityType="Self.bimcomp_category" Schema="probim" store:Type="Tables" />
+    <EntitySet Name="bimcomp_family" EntityType="Self.bimcomp_family" Schema="probim" store:Type="Tables" />
+    <EntitySet Name="bimcomp_faprop" EntityType="Self.bimcomp_faprop" Schema="probim" store:Type="Tables" />
+    <EntitySet Name="bimcomp_fapropcategory" EntityType="Self.bimcomp_fapropcategory" Schema="probim" store:Type="Tables" />
+    <EntitySet Name="bimcomp_file" EntityType="Self.bimcomp_file" Schema="probim" store:Type="Tables" />
+    <EntitySet Name="bimcomp_relmodel" EntityType="Self.bimcomp_relmodel" Schema="probim" store:Type="Tables" />
+    <EntitySet Name="bimcomp_reltag" EntityType="Self.bimcomp_reltag" Schema="probim" store:Type="Tables" />
+    <EntitySet Name="bimcomp_tag" EntityType="Self.bimcomp_tag" Schema="probim" store:Type="Tables" />
+    <EntitySet Name="cfg_urls" EntityType="Self.cfg_urls" Schema="probim" store:Type="Tables" />
+    <EntitySet Name="client_cashbalance" EntityType="Self.client_cashbalance" Schema="probim" store:Type="Tables" />
+    <EntitySet Name="client_chance" EntityType="Self.client_chance" Schema="probim" store:Type="Tables" />
+    <EntitySet Name="client_customer" EntityType="Self.client_customer" Schema="probim" store:Type="Tables" />
+    <EntitySet Name="client_customercontact" EntityType="Self.client_customercontact" Schema="probim" store:Type="Tables" />
+    <EntitySet Name="client_expenses" EntityType="Self.client_expenses" Schema="probim" store:Type="Tables" />
+    <EntitySet Name="client_invoice" EntityType="Self.client_invoice" Schema="probim" store:Type="Tables" />
+    <EntitySet Name="client_order" EntityType="Self.client_order" Schema="probim" store:Type="Tables" />
+    <EntitySet Name="client_orderentry" EntityType="Self.client_orderentry" Schema="probim" store:Type="Tables" />
+    <EntitySet Name="client_receivable" EntityType="Self.client_receivable" Schema="probim" store:Type="Tables" />
+    <EntitySet Name="client_trailrecord" EntityType="Self.client_trailrecord" Schema="probim" store:Type="Tables" />
+    <EntitySet Name="com_pdf_cache" EntityType="Self.com_pdf_cache" Schema="probim" store:Type="Tables" />
+    <EntitySet Name="email_addressee" EntityType="Self.email_addressee" Schema="probim" store:Type="Tables" />
+    <EntitySet Name="email_category" EntityType="Self.email_category" Schema="probim" store:Type="Tables" />
+    <EntitySet Name="email_content" EntityType="Self.email_content" Schema="probim" store:Type="Tables" />
+    <EntitySet Name="errno" EntityType="Self.errno" Schema="probim" store:Type="Tables" />
+    <EntitySet Name="exam_category" EntityType="Self.exam_category" Schema="probim" store:Type="Tables" />
+    <EntitySet Name="im_content" EntityType="Self.im_content" Schema="probim" store:Type="Tables" />
+    <EntitySet Name="im_group" EntityType="Self.im_group" Schema="probim" store:Type="Tables" />
+    <EntitySet Name="im_read" EntityType="Self.im_read" Schema="probim" store:Type="Tables" />
+    <EntitySet Name="im_usergroup" EntityType="Self.im_usergroup" Schema="probim" store:Type="Tables" />
+    <EntitySet Name="issue_status" EntityType="Self.issue_status" Schema="probim" store:Type="Tables" />
+    <EntitySet Name="issue_tag" EntityType="Self.issue_tag" Schema="probim" store:Type="Tables" />
+    <EntitySet Name="issue_type" EntityType="Self.issue_type" Schema="probim" store:Type="Tables" />
+    <EntitySet Name="msg_msg" EntityType="Self.msg_msg" Schema="probim" store:Type="Tables" />
+    <EntitySet Name="msg_msgext" EntityType="Self.msg_msgext" Schema="probim" store:Type="Tables" />
+    <EntitySet Name="msg_user" EntityType="Self.msg_user" Schema="probim" store:Type="Tables" />
+    <EntitySet Name="mtr_outerpage" EntityType="Self.mtr_outerpage" Schema="probim" store:Type="Tables" />
+    <EntitySet Name="oper_log" EntityType="Self.oper_log" Schema="probim" store:Type="Tables" />
+    <EntitySet Name="org_userorganize" EntityType="Self.org_userorganize" Schema="probim" store:Type="Tables" />
+    <EntitySet Name="panorama_base" EntityType="Self.panorama_base" Schema="probim" store:Type="Tables" />
+    <EntitySet Name="panorama_pointinfo" EntityType="Self.panorama_pointinfo" Schema="probim" store:Type="Tables" />
+    <EntitySet Name="plus_project" EntityType="Self.plus_project" Schema="probim" store:Type="Tables" />
+    <EntitySet Name="plus_resource" EntityType="Self.plus_resource" Schema="probim" store:Type="Tables" />
+    <EntitySet Name="plus_task3" EntityType="Self.plus_task3" Schema="probim" store:Type="Tables" />
+    <EntitySet Name="plusrel_taskelements" EntityType="Self.plusrel_taskelements" Schema="probim" store:Type="Tables" />
+    <EntitySet Name="rel_issue_issueuser" EntityType="Self.rel_issue_issueuser" Schema="probim" store:Type="Tables" />
+    <EntitySet Name="rel_issue_tag" EntityType="Self.rel_issue_tag" Schema="probim" store:Type="Tables" />
+    <EntitySet Name="rpt_temp" EntityType="Self.rpt_temp" Schema="probim" store:Type="Tables" />
+    <EntitySet Name="shared_model" EntityType="Self.shared_model" Schema="probim" store:Type="Tables" />
+    <EntitySet Name="sync_materialarrange" EntityType="Self.sync_materialarrange" Schema="probim" store:Type="Tables" />
+    <EntitySet Name="wechat_app" EntityType="Self.wechat_app" Schema="probim" store:Type="Tables" />
+    <EntitySet Name="wechat_deptrelation" EntityType="Self.wechat_deptrelation" Schema="probim" store:Type="Tables" />
+    <EntitySet Name="wechat_userrelation" EntityType="Self.wechat_userrelation" Schema="probim" store:Type="Tables" />
+    <EntitySet Name="wf_delegaterecord" EntityType="Self.wf_delegaterecord" Schema="probim" store:Type="Tables" />
+    <EntitySet Name="wf_delegaterule" EntityType="Self.wf_delegaterule" Schema="probim" store:Type="Tables" />
+    <EntitySet Name="wf_delegateruleschemeinfo" EntityType="Self.wf_delegateruleschemeinfo" Schema="probim" store:Type="Tables" />
+    <EntitySet Name="wf_fieldcfg" EntityType="Self.wf_fieldcfg" Schema="probim" store:Type="Tables" />
+    <EntitySet Name="wf_flowinstance" EntityType="Self.wf_flowinstance" Schema="probim" store:Type="Tables" />
+    <EntitySet Name="wf_flowinstanceactive" EntityType="Self.wf_flowinstanceactive" Schema="probim" store:Type="Tables" />
+    <EntitySet Name="wf_flowrecord" EntityType="Self.wf_flowrecord" Schema="probim" store:Type="Tables" />
+    <EntitySet Name="wf_frmmain" EntityType="Self.wf_frmmain" Schema="probim" store:Type="Tables" />
+    <EntitySet Name="wf_linebtns" EntityType="Self.wf_linebtns" Schema="probim" store:Type="Tables" />
+    <EntitySet Name="wf_nodedatas" EntityType="Self.wf_nodedatas" Schema="probim" store:Type="Tables" />
+    <EntitySet Name="wf_processinstance" EntityType="Self.wf_processinstance" Schema="probim" store:Type="Tables" />
+    <EntitySet Name="wf_processoperationhistory" EntityType="Self.wf_processoperationhistory" Schema="probim" store:Type="Tables" />
+    <EntitySet Name="wf_processscheme" EntityType="Self.wf_processscheme" Schema="probim" store:Type="Tables" />
+    <EntitySet Name="wf_processtransitionhistory" EntityType="Self.wf_processtransitionhistory" Schema="probim" store:Type="Tables" />
+    <EntitySet Name="wf_projectschemerelation" EntityType="Self.wf_projectschemerelation" Schema="probim" store:Type="Tables" />
+    <EntitySet Name="wf_schemecontent" EntityType="Self.wf_schemecontent" Schema="probim" store:Type="Tables" />
+    <EntitySet Name="wf_schemeinfo" EntityType="Self.wf_schemeinfo" Schema="probim" store:Type="Tables" />
+    <EntitySet Name="wf_schemeinfoauthorize" EntityType="Self.wf_schemeinfoauthorize" Schema="probim" store:Type="Tables" />
+    <EntitySet Name="api_examinerectification" EntityType="Self.api_examinerectification" store:Type="Tables" store:Schema="probim">
+      <DefiningQuery>SELECT
+`api_examinerectification`.`RectificationID`, 
+`api_examinerectification`.`RectificationOperatorID`, 
+`api_examinerectification`.`RectificationOperator`, 
+`api_examinerectification`.`RectificationOperateFlag`, 
+`api_examinerectification`.`RectificationCheckDate`, 
+`api_examinerectification`.`RectificationCheckResult`, 
+`api_examinerectification`.`RectificationRemark`, 
+`api_examinerectification`.`IsDel`, 
+`api_examinerectification`.`ExamineID`, 
+`api_examinerectification`.`CreateDate`
+FROM `api_examinerectification` AS `api_examinerectification`</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="base_module_bak" EntityType="Self.base_module_bak" store:Type="Tables" store:Schema="probim">
+      <DefiningQuery>SELECT
+`base_module_bak`.`ModuleId`, 
+`base_module_bak`.`ParentId`, 
+`base_module_bak`.`EnCode`, 
+`base_module_bak`.`FullName`, 
+`base_module_bak`.`Icon`, 
+`base_module_bak`.`UrlAddress`, 
+`base_module_bak`.`Target`, 
+`base_module_bak`.`IsMenu`, 
+`base_module_bak`.`AllowExpand`, 
+`base_module_bak`.`IsPublic`, 
+`base_module_bak`.`AllowEdit`, 
+`base_module_bak`.`AllowDelete`, 
+`base_module_bak`.`SortCode`, 
+`base_module_bak`.`DeleteMark`, 
+`base_module_bak`.`EnabledMark`, 
+`base_module_bak`.`Description`, 
+`base_module_bak`.`CreateDate`, 
+`base_module_bak`.`CreateUserId`, 
+`base_module_bak`.`CreateUserName`, 
+`base_module_bak`.`ModifyDate`, 
+`base_module_bak`.`ModifyUserId`, 
+`base_module_bak`.`ModifyUserName`, 
+`base_module_bak`.`Category`
+FROM `base_module_bak` AS `base_module_bak`</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="base_organizeextendbak" EntityType="Self.base_organizeextendbak" store:Type="Tables" store:Schema="probim">
+      <DefiningQuery>SELECT
+`base_organizeextendbak`.`OrganizeExtendId`, 
+`base_organizeextendbak`.`OrganizeId`, 
+`base_organizeextendbak`.`Title`, 
+`base_organizeextendbak`.`Description`, 
+`base_organizeextendbak`.`Status`, 
+`base_organizeextendbak`.`ThumbnailUrl`, 
+`base_organizeextendbak`.`BIMComposerID`, 
+`base_organizeextendbak`.`IsDel`, 
+`base_organizeextendbak`.`IsPublic`, 
+`base_organizeextendbak`.`IsPersonal`, 
+`base_organizeextendbak`.`OwnerUnit`, 
+`base_organizeextendbak`.`ConstructionUnit`, 
+`base_organizeextendbak`.`DesignUnit`, 
+`base_organizeextendbak`.`ProjectApprovalDate`
+FROM `base_organizeextendbak` AS `base_organizeextendbak`</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="base_projectnews_copy" EntityType="Self.base_projectnews_copy" store:Type="Tables" store:Schema="probim">
+      <DefiningQuery>SELECT
+`base_projectnews_copy`.`bpn_guid`, 
+`base_projectnews_copy`.`bpn_title`, 
+`base_projectnews_copy`.`bpn_content`, 
+`base_projectnews_copy`.`bpn_extjson`, 
+`base_projectnews_copy`.`OrganizeId`
+FROM `base_projectnews_copy` AS `base_projectnews_copy`</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="base_user_bak" EntityType="Self.base_user_bak" store:Type="Tables" store:Schema="probim">
+      <DefiningQuery>SELECT
+`base_user_bak`.`UserId`, 
+`base_user_bak`.`EnCode`, 
+`base_user_bak`.`Account`, 
+`base_user_bak`.`Password`, 
+`base_user_bak`.`Secretkey`, 
+`base_user_bak`.`RealName`, 
+`base_user_bak`.`NickName`, 
+`base_user_bak`.`HeadIcon`, 
+`base_user_bak`.`QuickQuery`, 
+`base_user_bak`.`SimpleSpelling`, 
+`base_user_bak`.`Gender`, 
+`base_user_bak`.`Birthday`, 
+`base_user_bak`.`Mobile`, 
+`base_user_bak`.`Telephone`, 
+`base_user_bak`.`Email`, 
+`base_user_bak`.`OICQ`, 
+`base_user_bak`.`WeChat`, 
+`base_user_bak`.`MSN`, 
+`base_user_bak`.`ManagerId`, 
+`base_user_bak`.`Manager`, 
+`base_user_bak`.`OrganizeId`, 
+`base_user_bak`.`DepartmentId`, 
+`base_user_bak`.`RoleId`, 
+`base_user_bak`.`DutyId`, 
+`base_user_bak`.`DutyName`, 
+`base_user_bak`.`PostId`, 
+`base_user_bak`.`PostName`, 
+`base_user_bak`.`WorkGroupId`, 
+`base_user_bak`.`SecurityLevel`, 
+`base_user_bak`.`UserOnLine`, 
+`base_user_bak`.`OpenId`, 
+`base_user_bak`.`Question`, 
+`base_user_bak`.`AnswerQuestion`, 
+`base_user_bak`.`CheckOnLine`, 
+`base_user_bak`.`AllowStartTime`, 
+`base_user_bak`.`AllowEndTime`, 
+`base_user_bak`.`LockStartDate`, 
+`base_user_bak`.`LockEndDate`, 
+`base_user_bak`.`FirstVisit`, 
+`base_user_bak`.`PreviousVisit`, 
+`base_user_bak`.`LastVisit`, 
+`base_user_bak`.`LogOnCount`, 
+`base_user_bak`.`SortCode`, 
+`base_user_bak`.`DeleteMark`, 
+`base_user_bak`.`EnabledMark`, 
+`base_user_bak`.`Description`, 
+`base_user_bak`.`CreateDate`, 
+`base_user_bak`.`CreateUserId`, 
+`base_user_bak`.`CreateUserName`, 
+`base_user_bak`.`ModifyDate`, 
+`base_user_bak`.`ModifyUserId`, 
+`base_user_bak`.`ModifyUserName`, 
+`base_user_bak`.`UserType`, 
+`base_user_bak`.`DataFrom`
+FROM `base_user_bak` AS `base_user_bak`</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="del_plustask1" EntityType="Self.del_plustask1" store:Type="Tables" store:Schema="probim">
+      <DefiningQuery>SELECT
+`del_plustask1`.`UID_`, 
+`del_plustask1`.`ID_`, 
+`del_plustask1`.`NAME_`, 
+`del_plustask1`.`START_`, 
+`del_plustask1`.`FINISH_`, 
+`del_plustask1`.`DURATION_`, 
+`del_plustask1`.`WORK_`, 
+`del_plustask1`.`PERCENTCOMPLETE_`, 
+`del_plustask1`.`MANUAL_`, 
+`del_plustask1`.`WEIGHT_`, 
+`del_plustask1`.`CONSTRAINTTYPE_`, 
+`del_plustask1`.`CONSTRAINTDATE_`, 
+`del_plustask1`.`MILESTONE_`, 
+`del_plustask1`.`SUMMARY_`, 
+`del_plustask1`.`CRITICAL_`, 
+`del_plustask1`.`PRIORITY_`, 
+`del_plustask1`.`NOTES_`, 
+`del_plustask1`.`DEPARTMENT_`, 
+`del_plustask1`.`PRINCIPAL_`, 
+`del_plustask1`.`PREDECESSORLINK_`, 
+`del_plustask1`.`FIXEDDATE_`, 
+`del_plustask1`.`PARENTTASKUID_`, 
+`del_plustask1`.`PROJECTUID_`, 
+`del_plustask1`.`ACTUALSTART_`, 
+`del_plustask1`.`ACTUALFINISH_`, 
+`del_plustask1`.`ACTUALDURATION_`, 
+`del_plustask1`.`ASSIGNMENTS_`, 
+`del_plustask1`.`WBS_`, 
+`del_plustask1`.`CRITICAL2_`
+FROM `del_plustask1` AS `del_plustask1`</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="del_plustask2" EntityType="Self.del_plustask2" store:Type="Tables" store:Schema="probim">
+      <DefiningQuery>SELECT
+`del_plustask2`.`UID_`, 
+`del_plustask2`.`ID_`, 
+`del_plustask2`.`NAME_`, 
+`del_plustask2`.`START_`, 
+`del_plustask2`.`FINISH_`, 
+`del_plustask2`.`DURATION_`, 
+`del_plustask2`.`WORK_`, 
+`del_plustask2`.`PERCENTCOMPLETE_`, 
+`del_plustask2`.`MANUAL_`, 
+`del_plustask2`.`WEIGHT_`, 
+`del_plustask2`.`CONSTRAINTTYPE_`, 
+`del_plustask2`.`CONSTRAINTDATE_`, 
+`del_plustask2`.`MILESTONE_`, 
+`del_plustask2`.`SUMMARY_`, 
+`del_plustask2`.`CRITICAL_`, 
+`del_plustask2`.`PRIORITY_`, 
+`del_plustask2`.`NOTES_`, 
+`del_plustask2`.`DEPARTMENT_`, 
+`del_plustask2`.`PRINCIPAL_`, 
+`del_plustask2`.`PREDECESSORLINK_`, 
+`del_plustask2`.`FIXEDDATE_`, 
+`del_plustask2`.`PARENTTASKUID_`, 
+`del_plustask2`.`PROJECTUID_`, 
+`del_plustask2`.`ACTUALSTART_`, 
+`del_plustask2`.`ACTUALFINISH_`, 
+`del_plustask2`.`ACTUALDURATION_`, 
+`del_plustask2`.`ASSIGNMENTS_`, 
+`del_plustask2`.`WBS_`, 
+`del_plustask2`.`CRITICAL2_`
+FROM `del_plustask2` AS `del_plustask2`</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="ipwhite" EntityType="Self.ipwhite" store:Type="Tables" store:Schema="probim">
+      <DefiningQuery>SELECT
+`ipwhite`.`IPAddress`, 
+`ipwhite`.`IPName`
+FROM `ipwhite` AS `ipwhite`</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="plus_task" EntityType="Self.plus_task" store:Type="Tables" store:Schema="probim">
+      <DefiningQuery>SELECT
+`plus_task`.`UID_`, 
+`plus_task`.`ID_`, 
+`plus_task`.`NAME_`, 
+`plus_task`.`START_`, 
+`plus_task`.`FINISH_`, 
+`plus_task`.`DURATION_`, 
+`plus_task`.`WORK_`, 
+`plus_task`.`PERCENTCOMPLETE_`, 
+`plus_task`.`MANUAL_`, 
+`plus_task`.`WEIGHT_`, 
+`plus_task`.`CONSTRAINTTYPE_`, 
+`plus_task`.`CONSTRAINTDATE_`, 
+`plus_task`.`MILESTONE_`, 
+`plus_task`.`SUMMARY_`, 
+`plus_task`.`CRITICAL_`, 
+`plus_task`.`PRIORITY_`, 
+`plus_task`.`NOTES_`, 
+`plus_task`.`DEPARTMENT_`, 
+`plus_task`.`PRINCIPAL_`, 
+`plus_task`.`PREDECESSORLINK_`, 
+`plus_task`.`FIXEDDATE_`, 
+`plus_task`.`PARENTTASKUID_`, 
+`plus_task`.`PROJECTUID_`, 
+`plus_task`.`ACTUALSTART_`, 
+`plus_task`.`ACTUALFINISH_`, 
+`plus_task`.`ACTUALDURATION_`, 
+`plus_task`.`ASSIGNMENTS_`, 
+`plus_task`.`WBS_`, 
+`plus_task`.`CRITICAL2_`
+FROM `plus_task` AS `plus_task`</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="plus_task_originbak" EntityType="Self.plus_task_originbak" store:Type="Tables" store:Schema="probim">
+      <DefiningQuery>SELECT
+`plus_task_originbak`.`UID_`, 
+`plus_task_originbak`.`ID_`, 
+`plus_task_originbak`.`NAME_`, 
+`plus_task_originbak`.`START_`, 
+`plus_task_originbak`.`FINISH_`, 
+`plus_task_originbak`.`DURATION_`, 
+`plus_task_originbak`.`WORK_`, 
+`plus_task_originbak`.`PERCENTCOMPLETE_`, 
+`plus_task_originbak`.`MANUAL_`, 
+`plus_task_originbak`.`WEIGHT_`, 
+`plus_task_originbak`.`CONSTRAINTTYPE_`, 
+`plus_task_originbak`.`CONSTRAINTDATE_`, 
+`plus_task_originbak`.`MILESTONE_`, 
+`plus_task_originbak`.`SUMMARY_`, 
+`plus_task_originbak`.`CRITICAL_`, 
+`plus_task_originbak`.`PRIORITY_`, 
+`plus_task_originbak`.`NOTES_`, 
+`plus_task_originbak`.`DEPARTMENT_`, 
+`plus_task_originbak`.`PRINCIPAL_`, 
+`plus_task_originbak`.`PREDECESSORLINK_`, 
+`plus_task_originbak`.`FIXEDDATE_`, 
+`plus_task_originbak`.`PARENTTASKUID_`, 
+`plus_task_originbak`.`PROJECTUID_`, 
+`plus_task_originbak`.`ACTUALSTART_`, 
+`plus_task_originbak`.`ACTUALFINISH_`, 
+`plus_task_originbak`.`ACTUALDURATION_`, 
+`plus_task_originbak`.`ASSIGNMENTS_`, 
+`plus_task_originbak`.`WBS_`, 
+`plus_task_originbak`.`CRITICAL2_`
+FROM `plus_task_originbak` AS `plus_task_originbak`</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="share_doc" EntityType="Self.share_doc" store:Type="Tables" store:Schema="probim">
+      <DefiningQuery>SELECT
+`share_doc`.`shd_Guid`, 
+`share_doc`.`shd_SessionId`, 
+`share_doc`.`shd_BIMComposerId`, 
+`share_doc`.`shd_DocIds`, 
+`share_doc`.`shd_Privilege`, 
+`share_doc`.`shd_CreateDate`, 
+`share_doc`.`shd_EndTime`, 
+`share_doc`.`shd_HasPwd`, 
+`share_doc`.`shd_Pwd`, 
+`share_doc`.`CreateUserId`
+FROM `share_doc` AS `share_doc`</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="sysloginlog" EntityType="Self.sysloginlog" store:Type="Tables" store:Schema="probim">
+      <DefiningQuery>SELECT
+`sysloginlog`.`SysLoginLogId`, 
+`sysloginlog`.`CreateDate`, 
+`sysloginlog`.`Account`, 
+`sysloginlog`.`Status`, 
+`sysloginlog`.`IPAddress`, 
+`sysloginlog`.`IPAddressName`, 
+`sysloginlog`.`NickName`, 
+`sysloginlog`.`Sex`, 
+`sysloginlog`.`Openid`, 
+`sysloginlog`.`NowStatus`, 
+`sysloginlog`.`Platform`
+FROM `sysloginlog` AS `sysloginlog`</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>
