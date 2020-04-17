@@ -1,0 +1,6 @@
+C:\codes_self\rep.JingruiZhang.EF\sln.JingruiZhang.EF\ModelNet45\bin\Debug\ModelNet45.dll
+C:\codes_self\rep.JingruiZhang.EF\sln.JingruiZhang.EF\ModelNet45\bin\Debug\ModelNet45.pdb
+C:\codes_self\rep.JingruiZhang.EF\sln.JingruiZhang.EF\ModelNet45\obj\Debug\ModelNet45.csprojAssemblyReference.cache
+C:\codes_self\rep.JingruiZhang.EF\sln.JingruiZhang.EF\ModelNet45\obj\Debug\ModelNet45.csproj.CoreCompileInputs.cache
+C:\codes_self\rep.JingruiZhang.EF\sln.JingruiZhang.EF\ModelNet45\obj\Debug\ModelNet45.dll
+C:\codes_self\rep.JingruiZhang.EF\sln.JingruiZhang.EF\ModelNet45\obj\Debug\ModelNet45.pdb
