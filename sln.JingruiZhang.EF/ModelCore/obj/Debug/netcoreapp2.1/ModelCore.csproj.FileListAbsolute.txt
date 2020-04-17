@@ -7,3 +7,5 @@ C:\codes_self\rep.JingruiZhang.EF\sln.JingruiZhang.EF\ModelCore\obj\Debug\netcor
 C:\codes_self\rep.JingruiZhang.EF\sln.JingruiZhang.EF\ModelCore\obj\Debug\netcoreapp2.1\ModelCore.AssemblyInfo.cs
 C:\codes_self\rep.JingruiZhang.EF\sln.JingruiZhang.EF\ModelCore\obj\Debug\netcoreapp2.1\ModelCore.dll
 C:\codes_self\rep.JingruiZhang.EF\sln.JingruiZhang.EF\ModelCore\obj\Debug\netcoreapp2.1\ModelCore.pdb
+C:\codes_self\rep.JingruiZhang.EF\sln.JingruiZhang.EF\ModelCore\bin\Debug\netcoreapp2.1\ModelCore.runtimeconfig.json
+C:\codes_self\rep.JingruiZhang.EF\sln.JingruiZhang.EF\ModelCore\bin\Debug\netcoreapp2.1\ModelCore.runtimeconfig.dev.json
