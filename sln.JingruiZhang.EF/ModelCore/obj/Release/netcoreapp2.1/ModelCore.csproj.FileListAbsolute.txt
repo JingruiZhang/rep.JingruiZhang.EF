@@ -1,0 +1,11 @@
+C:\codes_self\rep.JingruiZhang.EF\sln.JingruiZhang.EF\ModelCore\bin\Release\netcoreapp2.1\ModelCore.deps.json
+C:\codes_self\rep.JingruiZhang.EF\sln.JingruiZhang.EF\ModelCore\bin\Release\netcoreapp2.1\ModelCore.runtimeconfig.json
+C:\codes_self\rep.JingruiZhang.EF\sln.JingruiZhang.EF\ModelCore\bin\Release\netcoreapp2.1\ModelCore.runtimeconfig.dev.json
+C:\codes_self\rep.JingruiZhang.EF\sln.JingruiZhang.EF\ModelCore\bin\Release\netcoreapp2.1\ModelCore.dll
+C:\codes_self\rep.JingruiZhang.EF\sln.JingruiZhang.EF\ModelCore\bin\Release\netcoreapp2.1\ModelCore.pdb
+C:\codes_self\rep.JingruiZhang.EF\sln.JingruiZhang.EF\ModelCore\obj\Release\netcoreapp2.1\ModelCore.csprojAssemblyReference.cache
+C:\codes_self\rep.JingruiZhang.EF\sln.JingruiZhang.EF\ModelCore\obj\Release\netcoreapp2.1\ModelCore.csproj.CoreCompileInputs.cache
+C:\codes_self\rep.JingruiZhang.EF\sln.JingruiZhang.EF\ModelCore\obj\Release\netcoreapp2.1\ModelCore.AssemblyInfoInputs.cache
+C:\codes_self\rep.JingruiZhang.EF\sln.JingruiZhang.EF\ModelCore\obj\Release\netcoreapp2.1\ModelCore.AssemblyInfo.cs
+C:\codes_self\rep.JingruiZhang.EF\sln.JingruiZhang.EF\ModelCore\obj\Release\netcoreapp2.1\ModelCore.dll
+C:\codes_self\rep.JingruiZhang.EF\sln.JingruiZhang.EF\ModelCore\obj\Release\netcoreapp2.1\ModelCore.pdb

@@ -15,6 +15,7 @@ namespace JingruiZhang.EF
     /// <summary>
     /// 数据库上下文帮助类（.netFramework及 .netStandard通用帮助类）
     /// </summary>
+    [Obsolete("请使用 ZDbContext 代替")]
     public class ZDbContextHelper
     {
         /// <summary>
