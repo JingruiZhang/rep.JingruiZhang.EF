@@ -66,7 +66,7 @@
             <typeparam name="T"></typeparam>
             <param name="models"></param>
         </member>
-        <member name="M:JingruiZhang.EF.ZDbContext.SaveChanges(System.Data.Entity.DbContext)">
+        <member name="M:JingruiZhang.EF.ZDbContext.SaveChanges">
             <summary>
             将实体变化写入数据库
             </summary>
@@ -99,7 +99,7 @@
             <param name="take">get数目</param>
             <returns></returns>
         </member>
-        <member name="M:JingruiZhang.EF.ZDbContext.SetAutoDetectChangesEnabled``1(System.Boolean)">
+        <member name="M:JingruiZhang.EF.ZDbContext.SetAutoDetectChangesEnabled(System.Boolean)">
             <summary>
             设置 AutoDetectChangesEnabled 属性，仅适用于DotNet45版本
             </summary>

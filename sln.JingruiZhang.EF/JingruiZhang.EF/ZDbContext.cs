@@ -109,7 +109,7 @@ namespace JingruiZhang.EF
         /// </summary>
         /// <param name="ctx"></param>
         /// <returns></returns>
-        public int SaveChanges(DbContext ctx)
+        public int SaveChanges()
         {
             return ctx.SaveChanges();
         }
@@ -201,7 +201,7 @@ namespace JingruiZhang.EF
 #else
         [Obsolete("DotNetCore版本不支持此项操作")]
 #endif
-        public void SetAutoDetectChangesEnabled<T>(bool auto)
+        public void SetAutoDetectChangesEnabled(bool auto)
         {
 #if NET45
             ctx.Configuration.AutoDetectChangesEnabled = auto;
