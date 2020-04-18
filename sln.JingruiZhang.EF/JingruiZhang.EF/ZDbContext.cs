@@ -83,6 +83,33 @@ namespace JingruiZhang.EF
         }
 
         /// <summary>
+        /// 让数据库上下文追踪多个实体变化
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="models"></param>
+        /// <param name="AutoDetectChangesSet">对于core版本，该参数不生效</param>
+        public void ModifyRange<T>(List<T> models, bool AutoDetectChangesSet)
+            where T:class
+        {
+#if NET45
+            if (AutoDetectChangesSet)
+            {
+                SetAutoDetectChangesEnabled(false);
+            }
+#endif
+            for (int i = 0; i < models.Count; i++)
+            {
+                Modify<T>(models[i]);
+            }
+#if NET45
+            if (AutoDetectChangesSet)
+            {
+                SetAutoDetectChangesEnabled(true);
+            }
+#endif
+        }
+
+        /// <summary>
         /// 数据库上下文跟踪对象的移除
         /// </summary>
         /// <typeparam name="T"></typeparam>

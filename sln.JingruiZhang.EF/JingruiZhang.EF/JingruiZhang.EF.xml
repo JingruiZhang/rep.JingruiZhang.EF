@@ -52,6 +52,14 @@
             <typeparam name="T"></typeparam>
             <param name="model"></param>
         </member>
+        <member name="M:JingruiZhang.EF.ZDbContext.ModifyRange``1(System.Collections.Generic.List{``0},System.Boolean)">
+            <summary>
+            让数据库上下文追踪多个实体变化
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="models"></param>
+            <param name="AutoDetectChangesSet">对于core版本，该参数不生效</param>
+        </member>
         <member name="M:JingruiZhang.EF.ZDbContext.Delete``1(``0)">
             <summary>
             数据库上下文跟踪对象的移除
