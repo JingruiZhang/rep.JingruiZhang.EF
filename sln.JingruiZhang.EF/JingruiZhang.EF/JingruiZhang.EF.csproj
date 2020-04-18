@@ -3,9 +3,10 @@
   <PropertyGroup>
     <TargetFrameworks>net45;netstandard2.0</TargetFrameworks>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>0.1.1</Version>
+    <Version>0.1.2</Version>
     <Description>EF通用帮助类</Description>
-    <PackageReleaseNotes># 初始化版本</PackageReleaseNotes>
+    <PackageReleaseNotes># 初始化版本
+# 添加 ZDbContext</PackageReleaseNotes>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net45|AnyCPU'">
