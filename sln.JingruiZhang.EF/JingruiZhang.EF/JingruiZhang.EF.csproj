@@ -3,10 +3,13 @@
   <PropertyGroup>
     <TargetFrameworks>net45;netstandard2.0</TargetFrameworks>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>0.1.5</Version>
+    <Version>0.1.6</Version>
     <Description>EF通用帮助类</Description>
-    <PackageReleaseNotes>0.1.5
-添加 SqlQuery方法</PackageReleaseNotes>
+    <PackageReleaseNotes>0.1.5 （请勿使用该版本）
+添加 SqlQuery方法
+0.1.6 
+修复 SqlQuery方法
+添加 ExecuteSqlCommand 方法（未测试）</PackageReleaseNotes>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net45|AnyCPU'">

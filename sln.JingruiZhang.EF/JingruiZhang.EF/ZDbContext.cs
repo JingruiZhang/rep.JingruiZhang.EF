@@ -222,10 +222,30 @@ namespace JingruiZhang.EF
         /// 直接执行sql进行查询
         /// </summary>
         /// <typeparam name="T">未知实体类型</typeparam>
-        [Obsolete("不推荐使用，尽量不写Sql")]
+        [Obsolete("不推荐使用，尽量不写Sql，且DotNetCore版本不再支持")]
         public List<T> SqlQuery<T>(string sql, params object[] parameters)
         {
-            return SqlQuery<T>(sql, parameters).ToList();
+#if NET45
+            return ctx.Database.SqlQuery<T>(sql, parameters).ToList();
+#else
+            throw new Exception("DotNetCore 不再支持执行自定义 Sql 语句");
+#endif
+        }
+
+        /// <summary>
+        /// 直接执行 Sql 语句
+        /// </summary>
+        /// <param name="sql">Sql语句</param>
+        /// <param name="parameters">DbParameter</param>
+        /// <returns></returns>
+        [Obsolete("不推荐使用，尽量不写Sql，且DotNetCore版本不再支持")]
+        public int ExecuteSqlCommand(string sql, params object[] parameters)
+        {
+#if NET45
+            return ctx.Database.ExecuteSqlCommand(sql, parameters);
+#else
+            throw new Exception("DotNetCore 不再支持执行自定义 Sql 语句");
+#endif
         }
 
         /// <summary>

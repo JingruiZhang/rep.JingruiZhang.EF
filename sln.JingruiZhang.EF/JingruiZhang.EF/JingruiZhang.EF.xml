@@ -113,6 +113,14 @@
             </summary>
             <typeparam name="T">未知实体类型</typeparam>
         </member>
+        <member name="M:JingruiZhang.EF.ZDbContext.ExecuteSqlCommand(System.String,System.Object[])">
+            <summary>
+            直接执行 Sql 语句
+            </summary>
+            <param name="sql">Sql语句</param>
+            <param name="parameters">DbParameter</param>
+            <returns></returns>
+        </member>
         <member name="M:JingruiZhang.EF.ZDbContext.SetAutoDetectChangesEnabled(System.Boolean)">
             <summary>
             设置 AutoDetectChangesEnabled 属性，仅适用于DotNet45版本
