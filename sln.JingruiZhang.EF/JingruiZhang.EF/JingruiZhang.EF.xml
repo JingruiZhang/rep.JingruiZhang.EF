@@ -107,6 +107,12 @@
             <param name="take">get数目</param>
             <returns></returns>
         </member>
+        <member name="M:JingruiZhang.EF.ZDbContext.SqlQuery``1(System.String,System.Object[])">
+            <summary>
+            直接执行sql进行查询
+            </summary>
+            <typeparam name="T">未知实体类型</typeparam>
+        </member>
         <member name="M:JingruiZhang.EF.ZDbContext.SetAutoDetectChangesEnabled(System.Boolean)">
             <summary>
             设置 AutoDetectChangesEnabled 属性，仅适用于DotNet45版本

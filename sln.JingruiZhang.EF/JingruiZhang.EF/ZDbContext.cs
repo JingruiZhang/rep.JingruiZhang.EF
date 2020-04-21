@@ -219,6 +219,16 @@ namespace JingruiZhang.EF
         }
 
         /// <summary>
+        /// 直接执行sql进行查询
+        /// </summary>
+        /// <typeparam name="T">未知实体类型</typeparam>
+        [Obsolete("不推荐使用，尽量不写Sql")]
+        public List<T> SqlQuery<T>(string sql, params object[] parameters)
+        {
+            return SqlQuery<T>(sql, parameters).ToList();
+        }
+
+        /// <summary>
         /// 设置 AutoDetectChangesEnabled 属性，仅适用于DotNet45版本
         /// </summary>
         /// <typeparam name="T"></typeparam>
