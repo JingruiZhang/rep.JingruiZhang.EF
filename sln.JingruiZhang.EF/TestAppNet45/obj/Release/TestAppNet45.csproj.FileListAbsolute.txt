@@ -1,7 +1,0 @@
-C:\codes_self\rep.JingruiZhang.EF\sln.JingruiZhang.EF\TestAppNet45\bin\Release\TestAppNet45.exe.config
-C:\codes_self\rep.JingruiZhang.EF\sln.JingruiZhang.EF\TestAppNet45\bin\Release\TestAppNet45.exe
-C:\codes_self\rep.JingruiZhang.EF\sln.JingruiZhang.EF\TestAppNet45\bin\Release\TestAppNet45.pdb
-C:\codes_self\rep.JingruiZhang.EF\sln.JingruiZhang.EF\TestAppNet45\obj\Release\TestAppNet45.csprojAssemblyReference.cache
-C:\codes_self\rep.JingruiZhang.EF\sln.JingruiZhang.EF\TestAppNet45\obj\Release\TestAppNet45.csproj.CoreCompileInputs.cache
-C:\codes_self\rep.JingruiZhang.EF\sln.JingruiZhang.EF\TestAppNet45\obj\Release\TestAppNet45.exe
-C:\codes_self\rep.JingruiZhang.EF\sln.JingruiZhang.EF\TestAppNet45\obj\Release\TestAppNet45.pdb
